@@ -17,11 +17,6 @@ class SignInViewController: UIViewController {
     let signInModel: SignInModel
     let signInViewModel: SignInViewModel
     
-//    init(signInViewModel: SignInViewModel) {
-//        self.signInViewModel = signInViewModel
-//        super.init(nibName: nil, bundle: nil)
-//    }
-    
     init() {
         self.signInModel = SignInModel()
         self.signInViewModel = SignInViewModel(model: self.signInModel)
@@ -50,23 +45,24 @@ class SignInViewController: UIViewController {
     }
     
     func setupBindings() {
-//        let validEmailSignal = emailTextField.rac_textSignal()
-//            .toSignalProducer()
-//            .map {
-//                text in
-//                return text as! String
-//            }
-//            .filter {
-//                (text: String) in
-//                return self.isValidEmail(text)
-//            }
-        
         let emailProducer = emailTextField.rac_textSignalProducer()
         self.signInViewModel.email <~ emailProducer
         self.signInViewModel.isValidEmail.producer.startWithNext { isValid in
             if (isValid) {
-                NSLog("is valid")
+                NSLog("email is valid")
             }
+        }
+        
+        let passwordProducer = passwordTextField.rac_textSignalProducer()
+        self.signInViewModel.password <~ passwordProducer
+        self.signInViewModel.isValidPassword.producer.startWithNext { isValid in
+            if (isValid) {
+                NSLog("password is valid")
+            }
+        }
+        
+        self.signInViewModel.enableSignInButton.producer.startWithNext { isEnabled in
+            self.signInButton.enabled = isEnabled
         }
     }
 

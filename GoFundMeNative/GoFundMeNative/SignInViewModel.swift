@@ -13,7 +13,11 @@ class SignInViewModel: NSObject {
     
     var signInModel: SignInModel
     let email: MutableProperty<String> = MutableProperty("")
+    let password: MutableProperty<String> = MutableProperty("")
+
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
+    let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
+    let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
     init(model: SignInModel) {
         self.signInModel = model
@@ -21,11 +25,17 @@ class SignInViewModel: NSObject {
         super.init()
         
         // have isvalidemail listen to email
-        self.isValidEmail <~ self.email.producer.map(self.isValidEmail)
-        
+        self.isValidEmail <~ self.email.producer.map(self.checkValidEmail)
+        self.isValidPassword <~ self.password.producer.map(self.checkValidPassword)
+        self.enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
+            .map { $0 && $1 }
     }
     
-    func isValidEmail(emailInput: String) -> Bool {
+    func checkValidEmail(emailInput: String) -> Bool {
         return emailInput.characters.count > 3
+    }
+    
+    func checkValidPassword(passwordInput: String) -> Bool {
+        return passwordInput.characters.count > 3
     }
 }

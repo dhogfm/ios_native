@@ -131,10 +131,10 @@
 		D45CCB221C33131500DF6542 /* GoFundMeNative */ = {
 			isa = PBXGroup;
 			children = (
-				D4EA8F391C333D5D00F66391 /* RAC.swift */,
 				D45CCB5F1C331AB600DF6542 /* Models */,
 				D45CCB5E1C331AB100DF6542 /* ViewModels */,
 				D45CCB5D1C331AAD00DF6542 /* Views */,
+				D4EA8F3B1C3342B900F66391 /* RACUtils */,
 				D45CCB231C33131500DF6542 /* AppDelegate.swift */,
 				D45CCB2A1C33131500DF6542 /* Assets.xcassets */,
 				D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */,
@@ -184,6 +184,14 @@
 				D45CCB621C33217E00DF6542 /* SignInModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		D4EA8F3B1C3342B900F66391 /* RACUtils */ = {
+			isa = PBXGroup;
+			children = (
+				D4EA8F391C333D5D00F66391 /* RAC.swift */,
+			);
+			name = RACUtils;
 			sourceTree = "<group>";
 		};
 		E6F16F476C65D8468ECD5DC9 /* Pods */ = {
