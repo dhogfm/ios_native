@@ -1,11 +1,11 @@
 # GoFundMe
 
-Native iOS App
+Native iOS App  
 
-Project Configs:
+Project Configs:  
 Debug, Release Ad Hoc, Release App Store
 
-Preprocessor Macros:
-Debug: DEBUG
-Release Ad Hoc: ADHOC, PRODUCTION
-Release App Store: APPSTORE, PRODUCTION
+Preprocessor Macros:  
+Debug: DEBUG  
+Release Ad Hoc: ADHOC, PRODUCTION  
+Release App Store: APPSTORE, PRODUCTION  
