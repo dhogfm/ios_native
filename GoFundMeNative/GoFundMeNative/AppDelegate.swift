@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setup initial view
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        if let window = window {
+            window.backgroundColor = UIColor.whiteColor()
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController")
+            window.rootViewController = signInViewController
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 

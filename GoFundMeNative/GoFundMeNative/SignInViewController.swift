@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SignInViewController.swift
 //  GoFundMeNative
 //
 //  Created by Daniel Ho on 12/29/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UIView!
     @IBOutlet weak var passwordTextField: UIView!
     @IBOutlet weak var signInButton: UIButton!
