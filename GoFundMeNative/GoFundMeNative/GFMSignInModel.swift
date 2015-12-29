@@ -1,5 +1,5 @@
 //
-//  SignInModel.swift
+//  GFMSignInModel.swift
 //  GoFundMeNative
 //
 //  Created by Daniel Ho on 12/29/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInModel: NSObject {
+class GFMSignInModel: NSObject {
     
     var emailString: String = ""
     var passwordString: String = ""

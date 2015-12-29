@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  GFMSignInViewController.swift
 //  GoFundMeNative
 //
 //  Created by Daniel Ho on 12/29/15.
@@ -9,23 +9,23 @@
 import UIKit
 import ReactiveCocoa
 
-class SignInViewController: UIViewController {
+class GFMSignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
-    let signInModel: SignInModel
-    let signInViewModel: SignInViewModel
+    let signInModel: GFMSignInModel
+    let signInViewModel: GFMSignInViewModel
     
     init() {
-        self.signInModel = SignInModel()
-        self.signInViewModel = SignInViewModel(model: self.signInModel)
+        self.signInModel = GFMSignInModel()
+        self.signInViewModel = GFMSignInViewModel(model: self.signInModel)
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.signInModel = SignInModel()
-        self.signInViewModel = SignInViewModel(model: self.signInModel)
+        self.signInModel = GFMSignInModel()
+        self.signInViewModel = GFMSignInViewModel(model: self.signInModel)
         super.init(coder: aDecoder)
     }
 

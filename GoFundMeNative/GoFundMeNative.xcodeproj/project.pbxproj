@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		C9A558A3C3639E50C526242E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC721C4E5C4455DDD3CD04EF /* Pods.framework */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
-		D45CCB261C33131500DF6542 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB251C33131500DF6542 /* SignInViewController.swift */; };
+		D45CCB261C33131500DF6542 /* GFMSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB251C33131500DF6542 /* GFMSignInViewController.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
 		D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */; };
 		D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */; };
 		D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */; };
-		D45CCB611C331D1A00DF6542 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB601C331D1A00DF6542 /* SignInViewModel.swift */; };
-		D45CCB631C33217E00DF6542 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB621C33217E00DF6542 /* SignInModel.swift */; };
+		D45CCB611C331D1A00DF6542 /* GFMSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB601C331D1A00DF6542 /* GFMSignInViewModel.swift */; };
+		D45CCB631C33217E00DF6542 /* GFMSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB621C33217E00DF6542 /* GFMSignInModel.swift */; };
 		D45CCB671C3324E900DF6542 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB641C3324E900DF6542 /* Alamofire.framework */; };
 		D45CCB681C3324E900DF6542 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */; };
 		D45CCB691C3324E900DF6542 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB661C3324E900DF6542 /* Result.framework */; };
@@ -46,7 +46,7 @@
 		A5F4EB0B67730CC9617EEF46 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D45CCB201C33131500DF6542 /* GoFundMeNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFundMeNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB231C33131500DF6542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D45CCB251C33131500DF6542 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D45CCB251C33131500DF6542 /* GFMSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFMSignInViewController.swift; sourceTree = "<group>"; };
 		D45CCB281C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D45CCB2A1C33131500DF6542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D45CCB2D1C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,8 +57,8 @@
 		D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeUITests.swift; sourceTree = "<group>"; };
 		D45CCB451C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D45CCB601C331D1A00DF6542 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		D45CCB621C33217E00DF6542 /* SignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		D45CCB601C331D1A00DF6542 /* GFMSignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInViewModel.swift; sourceTree = "<group>"; };
+		D45CCB621C33217E00DF6542 /* GFMSignInModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInModel.swift; sourceTree = "<group>"; };
 		D45CCB641C3324E900DF6542 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D45CCB661C3324E900DF6542 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Pods/../build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
@@ -95,6 +95,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C5B9E531C334C79000AB6AF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		8E5975E2F7A1042AA365A1E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +142,7 @@
 				D45CCB5E1C331AB100DF6542 /* ViewModels */,
 				D45CCB5D1C331AAD00DF6542 /* Views */,
 				D4EA8F3B1C3342B900F66391 /* RACUtils */,
+				2C5B9E531C334C79000AB6AF /* Service */,
 				D45CCB231C33131500DF6542 /* AppDelegate.swift */,
 				D45CCB2A1C33131500DF6542 /* Assets.xcassets */,
 				D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */,
@@ -165,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D45CCB271C33131500DF6542 /* Main.storyboard */,
-				D45CCB251C33131500DF6542 /* SignInViewController.swift */,
+				D45CCB251C33131500DF6542 /* GFMSignInViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -173,7 +181,7 @@
 		D45CCB5E1C331AB100DF6542 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D45CCB601C331D1A00DF6542 /* SignInViewModel.swift */,
+				D45CCB601C331D1A00DF6542 /* GFMSignInViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -181,7 +189,7 @@
 		D45CCB5F1C331AB600DF6542 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D45CCB621C33217E00DF6542 /* SignInModel.swift */,
+				D45CCB621C33217E00DF6542 /* GFMSignInModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 		D45CCB181C33131500DF6542 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GFM;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Daniel Ho";
@@ -387,10 +396,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4EA8F3A1C333D5D00F66391 /* RAC.swift in Sources */,
-				D45CCB261C33131500DF6542 /* SignInViewController.swift in Sources */,
-				D45CCB631C33217E00DF6542 /* SignInModel.swift in Sources */,
+				D45CCB261C33131500DF6542 /* GFMSignInViewController.swift in Sources */,
+				D45CCB631C33217E00DF6542 /* GFMSignInModel.swift in Sources */,
 				D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */,
-				D45CCB611C331D1A00DF6542 /* SignInViewModel.swift in Sources */,
+				D45CCB611C331D1A00DF6542 /* GFMSignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SignInViewModel.swift
+//  GFMSignInViewModel.swift
 //  GoFundMeNative
 //
 //  Created by Daniel Ho on 12/29/15.
@@ -9,9 +9,9 @@
 import UIKit
 import ReactiveCocoa
 
-class SignInViewModel: NSObject {
+class GFMSignInViewModel: NSObject {
     
-    var signInModel: SignInModel
+    var signInModel: GFMSignInModel
     let email: MutableProperty<String> = MutableProperty("")
     let password: MutableProperty<String> = MutableProperty("")
 
@@ -19,7 +19,7 @@ class SignInViewModel: NSObject {
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
-    init(model: SignInModel) {
+    init(model: GFMSignInModel) {
         self.signInModel = model
         
         super.init()
