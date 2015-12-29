@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
+		D45CCB261C33131500DF6542 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB251C33131500DF6542 /* ViewController.swift */; };
+		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
+		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
+		D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */; };
+		D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */; };
+		D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D45CCB351C33131500DF6542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D45CCB181C33131500DF6542 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D45CCB1F1C33131500DF6542;
+			remoteInfo = GoFundMeNative;
+		};
+		D45CCB401C33131500DF6542 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D45CCB181C33131500DF6542 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D45CCB1F1C33131500DF6542;
+			remoteInfo = GoFundMeNative;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D45CCB201C33131500DF6542 /* GoFundMeNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFundMeNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45CCB231C33131500DF6542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D45CCB251C33131500DF6542 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D45CCB281C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D45CCB2A1C33131500DF6542 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D45CCB2D1C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D45CCB2F1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45CCB341C33131500DF6542 /* GoFundMeNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeTests.swift; sourceTree = "<group>"; };
+		D45CCB3A1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeUITests.swift; sourceTree = "<group>"; };
+		D45CCB451C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D45CCB1D1C33131500DF6542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB311C33131500DF6542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB3C1C33131500DF6542 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D45CCB171C33131500DF6542 = {
+			isa = PBXGroup;
+			children = (
+				D45CCB221C33131500DF6542 /* GoFundMeNative */,
+				D45CCB371C33131500DF6542 /* GoFundMeNativeTests */,
+				D45CCB421C33131500DF6542 /* GoFundMeNativeUITests */,
+				D45CCB211C33131500DF6542 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D45CCB211C33131500DF6542 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D45CCB201C33131500DF6542 /* GoFundMeNative.app */,
+				D45CCB341C33131500DF6542 /* GoFundMeNativeTests.xctest */,
+				D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D45CCB221C33131500DF6542 /* GoFundMeNative */ = {
+			isa = PBXGroup;
+			children = (
+				D45CCB231C33131500DF6542 /* AppDelegate.swift */,
+				D45CCB251C33131500DF6542 /* ViewController.swift */,
+				D45CCB271C33131500DF6542 /* Main.storyboard */,
+				D45CCB2A1C33131500DF6542 /* Assets.xcassets */,
+				D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */,
+				D45CCB2F1C33131500DF6542 /* Info.plist */,
+			);
+			path = GoFundMeNative;
+			sourceTree = "<group>";
+		};
+		D45CCB371C33131500DF6542 /* GoFundMeNativeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */,
+				D45CCB3A1C33131500DF6542 /* Info.plist */,
+			);
+			path = GoFundMeNativeTests;
+			sourceTree = "<group>";
+		};
+		D45CCB421C33131500DF6542 /* GoFundMeNativeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */,
+				D45CCB451C33131500DF6542 /* Info.plist */,
+			);
+			path = GoFundMeNativeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D45CCB1F1C33131500DF6542 /* GoFundMeNative */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45CCB481C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNative" */;
+			buildPhases = (
+				D45CCB1C1C33131500DF6542 /* Sources */,
+				D45CCB1D1C33131500DF6542 /* Frameworks */,
+				D45CCB1E1C33131500DF6542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoFundMeNative;
+			productName = GoFundMeNative;
+			productReference = D45CCB201C33131500DF6542 /* GoFundMeNative.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D45CCB331C33131500DF6542 /* GoFundMeNativeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45CCB4B1C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNativeTests" */;
+			buildPhases = (
+				D45CCB301C33131500DF6542 /* Sources */,
+				D45CCB311C33131500DF6542 /* Frameworks */,
+				D45CCB321C33131500DF6542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D45CCB361C33131500DF6542 /* PBXTargetDependency */,
+			);
+			name = GoFundMeNativeTests;
+			productName = GoFundMeNativeTests;
+			productReference = D45CCB341C33131500DF6542 /* GoFundMeNativeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D45CCB3E1C33131500DF6542 /* GoFundMeNativeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45CCB4E1C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNativeUITests" */;
+			buildPhases = (
+				D45CCB3B1C33131500DF6542 /* Sources */,
+				D45CCB3C1C33131500DF6542 /* Frameworks */,
+				D45CCB3D1C33131500DF6542 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D45CCB411C33131500DF6542 /* PBXTargetDependency */,
+			);
+			name = GoFundMeNativeUITests;
+			productName = GoFundMeNativeUITests;
+			productReference = D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D45CCB181C33131500DF6542 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Daniel Ho";
+				TargetAttributes = {
+					D45CCB1F1C33131500DF6542 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					D45CCB331C33131500DF6542 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = D45CCB1F1C33131500DF6542;
+					};
+					D45CCB3E1C33131500DF6542 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = D45CCB1F1C33131500DF6542;
+					};
+				};
+			};
+			buildConfigurationList = D45CCB1B1C33131500DF6542 /* Build configuration list for PBXProject "GoFundMeNative" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D45CCB171C33131500DF6542;
+			productRefGroup = D45CCB211C33131500DF6542 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D45CCB1F1C33131500DF6542 /* GoFundMeNative */,
+				D45CCB331C33131500DF6542 /* GoFundMeNativeTests */,
+				D45CCB3E1C33131500DF6542 /* GoFundMeNativeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D45CCB1E1C33131500DF6542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */,
+				D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */,
+				D45CCB291C33131500DF6542 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB321C33131500DF6542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB3D1C33131500DF6542 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D45CCB1C1C33131500DF6542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45CCB261C33131500DF6542 /* ViewController.swift in Sources */,
+				D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB301C33131500DF6542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D45CCB3B1C33131500DF6542 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D45CCB361C33131500DF6542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D45CCB1F1C33131500DF6542 /* GoFundMeNative */;
+			targetProxy = D45CCB351C33131500DF6542 /* PBXContainerItemProxy */;
+		};
+		D45CCB411C33131500DF6542 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D45CCB1F1C33131500DF6542 /* GoFundMeNative */;
+			targetProxy = D45CCB401C33131500DF6542 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D45CCB271C33131500DF6542 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45CCB281C33131500DF6542 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45CCB2D1C33131500DF6542 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D45CCB461C33131500DF6542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D45CCB471C33131500DF6542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D45CCB491C33131500DF6542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GoFundMeNative/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNative;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D45CCB4A1C33131500DF6542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GoFundMeNative/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNative;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D45CCB4C1C33131500DF6542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoFundMeNativeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoFundMeNative.app/GoFundMeNative";
+			};
+			name = Debug;
+		};
+		D45CCB4D1C33131500DF6542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoFundMeNativeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoFundMeNative.app/GoFundMeNative";
+			};
+			name = Release;
+		};
+		D45CCB4F1C33131500DF6542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GoFundMeNativeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GoFundMeNative;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D45CCB501C33131500DF6542 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GoFundMeNativeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GoFundMeNative;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D45CCB1B1C33131500DF6542 /* Build configuration list for PBXProject "GoFundMeNative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45CCB461C33131500DF6542 /* Debug */,
+				D45CCB471C33131500DF6542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D45CCB481C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNative" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45CCB491C33131500DF6542 /* Debug */,
+				D45CCB4A1C33131500DF6542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D45CCB4B1C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNativeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45CCB4C1C33131500DF6542 /* Debug */,
+				D45CCB4D1C33131500DF6542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D45CCB4E1C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNativeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45CCB4F1C33131500DF6542 /* Debug */,
+				D45CCB501C33131500DF6542 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D45CCB181C33131500DF6542 /* Project object */;
+}
