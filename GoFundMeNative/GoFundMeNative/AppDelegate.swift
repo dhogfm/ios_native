@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let services = GFMServices()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.backgroundColor = UIColor.whiteColor()
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let signInViewController: GFMSignInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as! GFMSignInViewController
+            
+            let signInModel = GFMSignInModel()
+            let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+            signInViewController.signInViewModel = signInViewModel
+            
             window.rootViewController = signInViewController
             window.makeKeyAndVisible()
         }

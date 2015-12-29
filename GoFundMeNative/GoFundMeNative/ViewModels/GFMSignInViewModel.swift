@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveCocoa
 
-class GFMSignInViewModel: NSObject {
+class GFMSignInViewModel: GFMViewModel {
     
     var signInModel: GFMSignInModel
     let email: MutableProperty<String> = MutableProperty("")
@@ -19,10 +19,10 @@ class GFMSignInViewModel: NSObject {
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
-    init(model: GFMSignInModel) {
+    init(model: GFMSignInModel, services: GFMServices) {
         self.signInModel = model
         
-        super.init()
+        super.init(services: services)
         
         // have isvalidemail listen to email
         self.isValidEmail <~ self.email.producer.map(self.checkValidEmail)
