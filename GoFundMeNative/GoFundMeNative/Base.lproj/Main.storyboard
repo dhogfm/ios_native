@@ -24,16 +24,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2Z-Tr-upb">
-                                <rect key="frame" x="200" y="70" width="200" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="L3O-Ly-vls"/>
-                                    <constraint firstAttribute="width" constant="200" id="kbP-d7-tOK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6V-oG-CN7">
                                 <rect key="frame" x="200" y="108" width="200" height="30"/>
                                 <animations/>
@@ -52,6 +42,16 @@
                                     <action selector="onSignInTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gt2-yp-jeT"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a2Z-Tr-upb">
+                                <rect key="frame" x="200" y="70" width="200" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L3O-Ly-vls"/>
+                                    <constraint firstAttribute="width" constant="200" id="kbP-d7-tOK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -68,8 +68,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="8bC-Xf-vdC" id="gya-un-lW4"/>
-                        <outlet property="passwordTextField" destination="8bC-Xf-vdC" id="XJD-qg-DEu"/>
+                        <outlet property="emailTextField" destination="a2Z-Tr-upb" id="D7w-gP-RGq"/>
+                        <outlet property="passwordTextField" destination="X6V-oG-CN7" id="HTo-2d-sTo"/>
                         <outlet property="signInButton" destination="sGk-F0-bHR" id="tnG-fh-8P2"/>
                     </connections>
                 </viewController>

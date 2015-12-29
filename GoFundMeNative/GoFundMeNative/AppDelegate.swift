@@ -23,9 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.backgroundColor = UIColor.whiteColor()
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let signInViewController: SignInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as! SignInViewController
-            let signInModel = SignInModel()
-            let signInViewModel = SignInViewModel(model: signInModel)
-            signInViewController.signInViewModel = signInViewModel
             window.rootViewController = signInViewController
             window.makeKeyAndVisible()
         }
