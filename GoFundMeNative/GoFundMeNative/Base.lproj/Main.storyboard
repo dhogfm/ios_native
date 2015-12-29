@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30a-By-eiI">
-                                <rect key="frame" x="274" y="28" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoFundMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30a-By-eiI">
+                                <rect key="frame" x="258" y="28" width="85" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,11 +44,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGk-F0-bHR">
+                                <rect key="frame" x="277" y="146" width="47" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="onSignInTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gt2-yp-jeT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a2Z-Tr-upb" firstAttribute="top" secondItem="30a-By-eiI" secondAttribute="bottom" constant="21" id="6n7-ZK-Pq5"/>
+                            <constraint firstItem="sGk-F0-bHR" firstAttribute="top" secondItem="X6V-oG-CN7" secondAttribute="bottom" constant="8" symbolic="YES" id="7op-Ny-9Iy"/>
+                            <constraint firstItem="sGk-F0-bHR" firstAttribute="centerX" secondItem="X6V-oG-CN7" secondAttribute="centerX" id="86R-GZ-XQp"/>
                             <constraint firstItem="30a-By-eiI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ef-sJ-6vB"/>
                             <constraint firstItem="X6V-oG-CN7" firstAttribute="centerX" secondItem="a2Z-Tr-upb" secondAttribute="centerX" id="Hkt-pz-OUY"/>
                             <constraint firstItem="30a-By-eiI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Nxu-nu-ejf"/>
@@ -57,6 +67,11 @@
                             <constraint firstItem="a2Z-Tr-upb" firstAttribute="centerX" secondItem="30a-By-eiI" secondAttribute="centerX" id="tH7-A0-dSk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="8bC-Xf-vdC" id="gya-un-lW4"/>
+                        <outlet property="passwordTextField" destination="8bC-Xf-vdC" id="XJD-qg-DEu"/>
+                        <outlet property="signInButton" destination="sGk-F0-bHR" id="tnG-fh-8P2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
