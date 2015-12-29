@@ -9,5 +9,11 @@
 import UIKit
 
 class SignInViewModel: NSObject {
-
+    
+    var signInModel: SignInModel
+    
+    init(model: SignInModel) {
+        self.signInModel = model
+        
+    }
 }

@@ -12,6 +12,12 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UIView!
     @IBOutlet weak var passwordTextField: UIView!
     @IBOutlet weak var signInButton: UIButton!
+    
+    var signInViewModel: SignInViewModel? {
+        didSet {
+//            postViewModel.subscribe(postViewModelUpdated)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
