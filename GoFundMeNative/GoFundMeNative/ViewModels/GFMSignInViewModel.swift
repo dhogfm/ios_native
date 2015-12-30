@@ -20,25 +20,24 @@ class GFMSignInViewModel: GFMViewModel {
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
+    var signInTapAction: Action<Void, Void, NSError>!
     var signInCocoaAction: CocoaAction!
+    
+    var isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     
     init(model: GFMSignInModel, services: GFMServices) {
         signInModel = model
         
         super.init(services: services)
         
-        // have isvalidemail listen to email
         isValidEmail <~ self.email.producer.map(self.checkValidEmail)
         isValidPassword <~ self.password.producer.map(self.checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
         
-        let signInTapAction = Action<Void, Void, NSError> {
-            NSLog("Sign In Button Pressed")
-            self.services.signIn(self.email.value, password: self.password.value) {
-                (response) in
-                NSLog("%@", response)
-            }
+        signInTapAction = Action<Void, Void, NSError>() {
+            self.isSignInExecuting.value = true
+            self.executeSignIn()
             return SignalProducer.empty
         }
     
@@ -53,4 +52,11 @@ class GFMSignInViewModel: GFMViewModel {
         return passwordInput.characters.count > 3
     }
 
+    func executeSignIn() {
+        self.services.signIn(self.email.value, password: self.password.value) {
+            (response) in
+            NSLog("%@", response)
+            self.isSignInExecuting.value = false
+        }
+    }
 }

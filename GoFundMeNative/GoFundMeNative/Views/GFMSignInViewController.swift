@@ -13,6 +13,7 @@ class GFMSignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
     
     var signInViewModel: GFMSignInViewModel?
     
@@ -45,6 +46,7 @@ class GFMSignInViewController: UIViewController {
                 self.signInButton.enabled = isEnabled
             }
             
+            loadingActivityIndicatorView.rac_hidden <~ viewModel.isSignInExecuting.producer.map({ !$0 })
             signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
         }
     }
