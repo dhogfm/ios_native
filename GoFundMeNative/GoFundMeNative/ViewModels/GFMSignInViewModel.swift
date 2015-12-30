@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import Result
 
 class GFMSignInViewModel: GFMViewModel {
     
@@ -20,7 +21,6 @@ class GFMSignInViewModel: GFMViewModel {
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
     var signInCocoaAction: CocoaAction!
-    var signInCommand: RACCommand?
     
     init(model: GFMSignInModel, services: GFMServices) {
         signInModel = model
@@ -33,12 +33,16 @@ class GFMSignInViewModel: GFMViewModel {
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
         
-        let signInAction = Action<Void, Void, NSError> {
-            // TODO - Create next ViewModel, Push Model via Services
-            NSLog("Pressed Button")
+        let signInTapAction = Action<Void, Void, NSError> {
+            NSLog("Sign In Button Pressed")
+            self.services.signIn(self.email.value, password: self.password.value) {
+                (response) in
+                NSLog("%@", response)
+            }
             return SignalProducer.empty
         }
-        signInCocoaAction = CocoaAction(signInAction, input: ())
+    
+        signInCocoaAction = CocoaAction(signInTapAction, input: ())
     }
     
     func checkValidEmail(emailInput: String) -> Bool {
@@ -49,10 +53,4 @@ class GFMSignInViewModel: GFMViewModel {
         return passwordInput.characters.count > 3
     }
 
-    func signIn(email: String, password: String) {
-        self.services.signIn(email, password: password) {
-            (response) in
-            NSLog("%@", response)
-        }
-    }
 }
