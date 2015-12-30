@@ -19,19 +19,33 @@ class GFMSignInViewModel: GFMViewModel {
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
-    var loginAction: Action<Void, (String, String), NoError>!
-    var cocoaLoginAction: CocoaAction!
+    var signInCocoaAction: CocoaAction!
+    var signInCommand: RACCommand?
     
     init(model: GFMSignInModel, services: GFMServices) {
-        self.signInModel = model
+        signInModel = model
         
         super.init(services: services)
         
         // have isvalidemail listen to email
-        self.isValidEmail <~ self.email.producer.map(self.checkValidEmail)
-        self.isValidPassword <~ self.password.producer.map(self.checkValidPassword)
-        self.enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
+        isValidEmail <~ self.email.producer.map(self.checkValidEmail)
+        isValidPassword <~ self.password.producer.map(self.checkValidPassword)
+        enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
+        
+        signInCommand = RACCommand(signalBlock: { (any: AnyObject!) -> RACSignal! in
+            return self.executeSignIn()
+        })
+        /*
+        let signInAction = Action<Void, Void, NSError> {
+            //if let navigationController = self.navigationController {
+                //navigationController.pushViewController(BrewNewPhaseViewController(brewDesignerViewModel: self.brewDesignerViewModel), animated: true)
+                //NSLog("%@", navigationController)
+                NSLog("Pressed Button")
+            return SignalProducer.empty
+        }
+        signInCocoaAction = CocoaAction(signInAction, input: ())
+        */
     }
     
     func checkValidEmail(emailInput: String) -> Bool {
@@ -40,5 +54,11 @@ class GFMSignInViewModel: GFMViewModel {
     
     func checkValidPassword(passwordInput: String) -> Bool {
         return passwordInput.characters.count > 3
+    }
+    
+    private func executeSignIn() -> RACSignal {
+        // TODO - Create next ViewModel, Push Model via Services
+        NSLog("Sign In Button Pressed")
+        return RACSignal()
     }
 }
