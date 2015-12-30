@@ -11,7 +11,7 @@ import ReactiveCocoa
 
 class GFMSignInViewModel: GFMViewModel {
     
-    var signInModel: GFMSignInModel
+    private var signInModel: GFMSignInModel
     let email: MutableProperty<String> = MutableProperty("")
     let password: MutableProperty<String> = MutableProperty("")
 
@@ -19,16 +19,26 @@ class GFMSignInViewModel: GFMViewModel {
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
+    var signInCocoaAction: CocoaAction!
+    var signInCommand: RACCommand?
+    
     init(model: GFMSignInModel, services: GFMServices) {
-        self.signInModel = model
+        signInModel = model
         
         super.init(services: services)
         
         // have isvalidemail listen to email
-        self.isValidEmail <~ self.email.producer.map(self.checkValidEmail)
-        self.isValidPassword <~ self.password.producer.map(self.checkValidPassword)
-        self.enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
+        isValidEmail <~ self.email.producer.map(self.checkValidEmail)
+        isValidPassword <~ self.password.producer.map(self.checkValidPassword)
+        enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
+        
+        let signInAction = Action<Void, Void, NSError> {
+            // TODO - Create next ViewModel, Push Model via Services
+            NSLog("Pressed Button")
+            return SignalProducer.empty
+        }
+        signInCocoaAction = CocoaAction(signInAction, input: ())
     }
     
     func checkValidEmail(emailInput: String) -> Bool {
@@ -38,4 +48,5 @@ class GFMSignInViewModel: GFMViewModel {
     func checkValidPassword(passwordInput: String) -> Bool {
         return passwordInput.characters.count > 3
     }
+
 }

@@ -194,8 +194,8 @@
 		D45CCB5E1C331AB100DF6542 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				2C5B9E581C3354A8000AB6AF /* GFMSignInViewModel.swift */,
 				2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */,
+				2C5B9E581C3354A8000AB6AF /* GFMSignInViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";

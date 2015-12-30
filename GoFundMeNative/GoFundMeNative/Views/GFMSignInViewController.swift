@@ -44,6 +44,8 @@ class GFMSignInViewController: UIViewController {
             viewModel.enableSignInButton.producer.startWithNext { isEnabled in
                 self.signInButton.enabled = isEnabled
             }
+            
+            signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
         }
     }
 
