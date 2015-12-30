@@ -33,19 +33,12 @@ class GFMSignInViewModel: GFMViewModel {
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
         
-        signInCommand = RACCommand(signalBlock: { (any: AnyObject!) -> RACSignal! in
-            return self.executeSignIn()
-        })
-        /*
         let signInAction = Action<Void, Void, NSError> {
-            //if let navigationController = self.navigationController {
-                //navigationController.pushViewController(BrewNewPhaseViewController(brewDesignerViewModel: self.brewDesignerViewModel), animated: true)
-                //NSLog("%@", navigationController)
-                NSLog("Pressed Button")
+            // TODO - Create next ViewModel, Push Model via Services
+            NSLog("Pressed Button")
             return SignalProducer.empty
         }
         signInCocoaAction = CocoaAction(signInAction, input: ())
-        */
     }
     
     func checkValidEmail(emailInput: String) -> Bool {
@@ -55,10 +48,5 @@ class GFMSignInViewModel: GFMViewModel {
     func checkValidPassword(passwordInput: String) -> Bool {
         return passwordInput.characters.count > 3
     }
-    
-    private func executeSignIn() -> RACSignal {
-        // TODO - Create next ViewModel, Push Model via Services
-        NSLog("Sign In Button Pressed")
-        return RACSignal()
-    }
+
 }
