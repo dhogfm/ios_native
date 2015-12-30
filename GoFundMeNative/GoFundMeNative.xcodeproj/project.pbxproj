@@ -29,6 +29,8 @@
 		D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
 		D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E5E1C335504000AB6AF /* GFMSignInModel.swift */; };
 		D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
+		D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
+		D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,7 @@
 		D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D45CCB661C3324E900DF6542 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Pods/../build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTestCase.swift; sourceTree = "<group>"; };
+		D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoFundMeAPI.swift; sourceTree = "<group>"; };
 		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5B9E541C334E6D000AB6AF /* GFMServices.swift */,
+				D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 				2C5B9E571C33527A000AB6AF /* GFMViewModel.swift in Sources */,
 				2C5B9E5B1C3354DC000AB6AF /* RAC.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
+				D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */,
 				2C5B9E551C334E6D000AB6AF /* GFMServices.swift in Sources */,
 				2C5B9E591C3354A8000AB6AF /* GFMSignInViewModel.swift in Sources */,
 				2C5B9E5D1C3354F1000AB6AF /* GFMSignInViewController.swift in Sources */,
@@ -426,6 +431,7 @@
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,
 				D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */,
 				D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */,
+				D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */,
 				D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */,
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
 				D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */,

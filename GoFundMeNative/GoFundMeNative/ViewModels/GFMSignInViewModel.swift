@@ -38,4 +38,11 @@ class GFMSignInViewModel: GFMViewModel {
     func checkValidPassword(passwordInput: String) -> Bool {
         return passwordInput.characters.count > 3
     }
+    
+    func signIn(email: String, password: String) {
+        self.services.signIn(email, password: password) {
+            (response) in
+            NSLog("%@", response)
+        }
+    }
 }

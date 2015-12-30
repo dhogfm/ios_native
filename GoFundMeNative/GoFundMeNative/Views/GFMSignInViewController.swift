@@ -48,6 +48,11 @@ class GFMSignInViewController: UIViewController {
     }
 
     @IBAction func onSignInTap(sender: AnyObject) {
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        if let viewModel = self.signInViewModel {
+            viewModel.signIn(email, password: password)
+        }
     }
 }
 

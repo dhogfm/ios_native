@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let signInViewController: GFMSignInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as! GFMSignInViewController
             
+            services.initializeApp()
             let signInModel = GFMSignInModel()
             let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
             signInViewController.signInViewModel = signInViewModel
