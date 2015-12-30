@@ -11,13 +11,16 @@ import ReactiveCocoa
 
 class GFMSignInViewModel: GFMViewModel {
     
-    var signInModel: GFMSignInModel
+    private var signInModel: GFMSignInModel
     let email: MutableProperty<String> = MutableProperty("")
     let password: MutableProperty<String> = MutableProperty("")
 
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
+    
+    var loginAction: Action<Void, (String, String), NoError>!
+    var cocoaLoginAction: CocoaAction!
     
     init(model: GFMSignInModel, services: GFMServices) {
         self.signInModel = model
