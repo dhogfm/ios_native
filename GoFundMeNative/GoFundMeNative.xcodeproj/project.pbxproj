@@ -32,6 +32,7 @@
 		D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
+		D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -434,6 +435,7 @@
 			files = (
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,
 				D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */,
+				D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */,
 				D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */,
 				D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */,
 				D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */,

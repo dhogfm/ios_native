@@ -19,7 +19,6 @@ private extension String {
 let endpointClosure = { (target: GoFundMe) -> Endpoint<GoFundMe> in
     let endpoint: Endpoint<GoFundMe> = Endpoint<GoFundMe>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: target.parameters)
     
-    // Sign all non-authenticating requests
     switch target {
     default:
         return endpoint.endpointByAddingHTTPHeaderFields(httpHeaders())
@@ -53,10 +52,6 @@ extension GoFundMe: TargetType {
             return ""
         case .SignIn:
             return "?route=index/postsignin"
-//        case .UserProfile(let name):
-//            return "/users/\(name.URLEscapedString)"
-//        case .UserRepositories(let name):
-//            return "/users/\(name.URLEscapedString)/repos"
         }
     }
         
@@ -85,12 +80,6 @@ extension GoFundMe: TargetType {
         switch self {
         case .SignIn:
             return "{\"login\": \"true\", \"id\": 100}".dataUsingEncoding(NSUTF8StringEncoding)!
-//        case .Zen:
-//            return "Half measures are as bad as nothing at all.".dataUsingEncoding(NSUTF8StringEncoding)!
-//        case .UserProfile(let name):
-//            return "{\"login\": \"\(name)\", \"id\": 100}".dataUsingEncoding(NSUTF8StringEncoding)!
-//        case .UserRepositories(_):
-//            return "[{\"name\": \"Repo Name\"}]".dataUsingEncoding(NSUTF8StringEncoding)!
         default:
             return "{}".dataUsingEncoding(NSUTF8StringEncoding)!
         }
@@ -127,9 +116,9 @@ func httpHeaders() -> [String: String] {
     headers["X-Mobile-App-Version"] = version
     headers["User-Agent"] = device.model
     headers["X-Requested-With"] = "XMLHTTPREQUEST"
-    #if DEBUG
-        headers["Cookie"] = "XDEBUG_SESSION=PHPSTORM"
-    #endif
+#if DEBUG
+    headers["Cookie"] = "XDEBUG_SESSION=PHPSTORM"
+#endif
     return headers
 }
 
