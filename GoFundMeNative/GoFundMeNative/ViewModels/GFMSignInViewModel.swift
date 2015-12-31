@@ -55,7 +55,7 @@ class GFMSignInViewModel: GFMViewModel {
     func executeSignIn() {
         self.services.signIn(self.email.value, password: self.password.value) {
             (response) in
-            NSLog("%@", response)
+            NSLog("%@", response!)
             self.isSignInExecuting.value = false
         }
     }

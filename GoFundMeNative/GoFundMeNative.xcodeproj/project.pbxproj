@@ -31,6 +31,7 @@
 		D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
 		D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
+		D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		D45CCB661C3324E900DF6542 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Pods/../build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTestCase.swift; sourceTree = "<group>"; };
 		D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoFundMeAPI.swift; sourceTree = "<group>"; };
+		D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMNetworkService.swift; sourceTree = "<group>"; };
 		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				2C5B9E541C334E6D000AB6AF /* GFMServices.swift */,
 				D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */,
+				D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			files = (
 				2C5B9E571C33527A000AB6AF /* GFMViewModel.swift in Sources */,
 				2C5B9E5B1C3354DC000AB6AF /* RAC.swift in Sources */,
+				D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
 				D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */,
 				2C5B9E551C334E6D000AB6AF /* GFMServices.swift in Sources */,
