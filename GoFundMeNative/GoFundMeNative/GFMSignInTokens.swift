@@ -14,24 +14,14 @@ class GFMSignInTokens: NSObject {
     let userId: String
     
     init(responseDict: NSDictionary?) {
-        // Is there a shortcut for this syntax?
-        if let responseCsrf : String = responseDict?["csrf"] as? String {
-            self.csrf = responseCsrf
-        } else {
-            self.csrf = ""
-        }
+        let responseCsrf: String = responseDict?["csrf"] as? String ?? ""
+        self.csrf = responseCsrf
+
+        let responsePassport = responseDict?["passport"] as? String ?? ""
+        self.passport = responsePassport;
         
-        if let responsePassport : String = responseDict?["passport"] as? String {
-            self.passport = responsePassport
-        } else {
-            self.passport = ""
-        }
-        
-        if let responseUserId : String = responseDict?["user_id"] as? String {
-            self.userId = responseUserId
-        } else {
-            self.userId = ""
-        }
+        let responseUserId : String = responseDict?["user_id"] as? String ?? ""
+        self.userId = responseUserId;
     }
     
 }
