@@ -18,7 +18,6 @@
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
 		D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */; };
-		D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */; };
 		D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */; };
 		D45CCB671C3324E900DF6542 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB641C3324E900DF6542 /* Alamofire.framework */; };
 		D45CCB681C3324E900DF6542 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */; };
@@ -38,6 +37,7 @@
 		D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */; };
 		D4EA8F501C3B149000F66391 /* GFMPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */; };
 		D4EA8F511C3B149000F66391 /* GFMPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */; };
+		D4EA8F531C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,6 @@
 		D45CCB2D1C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D45CCB2F1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45CCB341C33131500DF6542 /* GoFundMeNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeTests.swift; sourceTree = "<group>"; };
 		D45CCB3A1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeUITests.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		D4EA8F4A1C3AE8EA00F66391 /* GFMResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMResponseParser.swift; sourceTree = "<group>"; };
 		D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTokens.swift; sourceTree = "<group>"; };
 		D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceService.swift; sourceTree = "<group>"; };
+		D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceServiceTestCase.swift; sourceTree = "<group>"; };
 		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -184,9 +184,9 @@
 		D45CCB371C33131500DF6542 /* GoFundMeNativeTests */ = {
 			isa = PBXGroup;
 			children = (
-				D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */,
 				D45CCB3A1C33131500DF6542 /* Info.plist */,
 				D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */,
+				D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */,
 			);
 			path = GoFundMeNativeTests;
 			sourceTree = "<group>";
@@ -449,12 +449,12 @@
 			files = (
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,
 				D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */,
+				D4EA8F531C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift in Sources */,
 				D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */,
 				D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */,
 				D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */,
 				D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */,
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
-				D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */,
 				D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */,
 				D4EA8F3E1C3352EA00F66391 /* (null) in Sources */,
 				D4EA8F511C3B149000F66391 /* GFMPersistenceService.swift in Sources */,
