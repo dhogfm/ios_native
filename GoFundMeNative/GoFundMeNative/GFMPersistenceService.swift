@@ -21,9 +21,15 @@ class UserObject: Object {
 
 class GFMPersistenceService: NSObject {
     // accessing each realm needs to happen on the same thread
+    var realmConfiguration = Realm.Configuration()
+    
+    convenience init(configuration: Realm.Configuration) {
+        self.init()
+        realmConfiguration = configuration
+    }
     
     func storeAppTokens(tokens: GFMSignInTokens) {
-        let realm = try! Realm()
+        let realm = try! Realm(configuration: realmConfiguration)
         
         let userObject = UserObject()
         userObject.userId = tokens.userId
@@ -36,7 +42,7 @@ class GFMPersistenceService: NSObject {
     }
     
     func storedUserObject(userId: String) -> UserObject? {
-        let realm = try! Realm()
+        let realm = try! Realm(configuration: realmConfiguration)
         
         var userObject: UserObject?
         let userObjects = realm.objects(UserObject).filter("userId = '\(userId)'")

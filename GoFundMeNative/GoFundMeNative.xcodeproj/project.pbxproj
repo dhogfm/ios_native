@@ -41,6 +41,7 @@
 		D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */; };
 		D4EA8F501C3B149000F66391 /* GFMPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */; };
 		D4EA8F511C3B149000F66391 /* GFMPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */; };
+		D4EA8F531C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D4EA8F4A1C3AE8EA00F66391 /* GFMResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMResponseParser.swift; sourceTree = "<group>"; };
 		D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTokens.swift; sourceTree = "<group>"; };
 		D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceService.swift; sourceTree = "<group>"; };
+		D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceServiceTestCase.swift; sourceTree = "<group>"; };
 		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */,
 				D45CCB3A1C33131500DF6542 /* Info.plist */,
 				D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */,
+				D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */,
 			);
 			path = GoFundMeNativeTests;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			files = (
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,
 				D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */,
+				D4EA8F531C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift in Sources */,
 				D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */,
 				D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */,
 				D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */,
