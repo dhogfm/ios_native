@@ -32,15 +32,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        guard let signInViewController = navigationController.viewControllers[0] as? GFMSignInViewController else {
-            print("There was a problem fetching the Sign In View Controller from Storyboard")
-            return false
-        }
+        services.navigationService = GFMNavigationService(navigationController: navigationController)
+        let isLoggedIn = services.initializeApp()
         
-        services.initializeApp()
-        let signInModel = GFMSignInModel()
-        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
-        signInViewController.signInViewModel = signInViewModel
+        if (isLoggedIn) {
+            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMAccountViewController else {
+                print("There was a problem fetching the Account View Controller from Storyboard")
+                return false
+            }
+            
+            navigationController.viewControllers = [ accountViewController ]
+        } else {
+            guard let signInViewController = navigationController.viewControllers[0] as? GFMSignInViewController else {
+                print("There was a problem fetching the Sign In View Controller from Storyboard")
+                return false
+            }
+            
+            let signInModel = GFMSignInModel()
+            let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+            signInViewController.signInViewModel = signInViewModel
+        }
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

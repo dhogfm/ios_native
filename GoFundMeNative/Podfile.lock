@@ -30,7 +30,7 @@ DEPENDENCIES:
   - Moya (= 5.3.0)
   - Moya/ReactiveCocoa (= 5.3.0)
   - ReactiveCocoa (= 4.0.0-RC.1)
-  - RealmSwift
+  - RealmSwift (= 0.97.0)
 
 SPEC CHECKSUMS:
   Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
