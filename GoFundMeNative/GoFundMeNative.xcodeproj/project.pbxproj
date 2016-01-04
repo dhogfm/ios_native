@@ -33,6 +33,9 @@
 		D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
 		D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
+		D4EA8F4B1C3AE8EA00F66391 /* GFMResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4A1C3AE8EA00F66391 /* GFMResponseParser.swift */; };
+		D4EA8F4D1C3AE9A100F66391 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */; };
+		D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,8 @@
 		D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTestCase.swift; sourceTree = "<group>"; };
 		D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoFundMeAPI.swift; sourceTree = "<group>"; };
 		D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMNetworkService.swift; sourceTree = "<group>"; };
+		D4EA8F4A1C3AE8EA00F66391 /* GFMResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMResponseParser.swift; sourceTree = "<group>"; };
+		D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTokens.swift; sourceTree = "<group>"; };
 		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +123,7 @@
 				2C5B9E541C334E6D000AB6AF /* GFMServices.swift */,
 				D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */,
 				D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */,
+				D4EA8F4A1C3AE8EA00F66391 /* GFMResponseParser.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5B9E5E1C335504000AB6AF /* GFMSignInModel.swift */,
+				D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,10 +428,12 @@
 				2C5B9E5B1C3354DC000AB6AF /* RAC.swift in Sources */,
 				D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
+				D4EA8F4B1C3AE8EA00F66391 /* GFMResponseParser.swift in Sources */,
 				D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */,
 				2C5B9E551C334E6D000AB6AF /* GFMServices.swift in Sources */,
 				2C5B9E591C3354A8000AB6AF /* GFMSignInViewModel.swift in Sources */,
 				2C5B9E5D1C3354F1000AB6AF /* GFMSignInViewController.swift in Sources */,
+				D4EA8F4D1C3AE9A100F66391 /* GFMSignInTokens.swift in Sources */,
 				D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +450,7 @@
 				D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */,
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
 				D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */,
+				D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */,
 				D4EA8F3E1C3352EA00F66391 /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
