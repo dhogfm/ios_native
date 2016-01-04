@@ -19,19 +19,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Setup initial view
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        if let window = window {
-            window.backgroundColor = UIColor.whiteColor()
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let signInViewController: GFMSignInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as! GFMSignInViewController
-            
-            services.initializeApp()
-            let signInModel = GFMSignInModel()
-            let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
-            signInViewController.signInViewModel = signInViewModel
-            
-            window.rootViewController = signInViewController
-            window.makeKeyAndVisible()
+        guard let window = window else {
+            print("There was a problem fetching the window")
+            return false
         }
+        
+        window.backgroundColor = UIColor.whiteColor()
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+            print("There was a problem fetching the Sign In View Controller from Storyboard")
+            return false
+        }
+        
+        services.initializeApp()
+        let signInModel = GFMSignInModel()
+        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+        signInViewController.signInViewModel = signInViewModel
+        
+        window.rootViewController = signInViewController
+        window.makeKeyAndVisible()
+        
         
         return true
     }
