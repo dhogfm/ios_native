@@ -20,36 +20,39 @@ class GFMSignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.setupBindings()
+        self.setupViewModelBindings()
     }
     
-    func setupBindings() {
-        let emailProducer = emailTextField.rac_textSignalProducer()
-        
-        if let viewModel = self.signInViewModel {
-            viewModel.email <~ emailProducer
-            viewModel.isValidEmail.producer.startWithNext { isValid in
-                if (isValid) {
-                    NSLog("email is valid")
-                }
-            }
-            
-            let passwordProducer = passwordTextField.rac_textSignalProducer()
-            viewModel.password <~ passwordProducer
-            viewModel.isValidPassword.producer.startWithNext { isValid in
-                if (isValid) {
-                    NSLog("password is valid")
-                }
-            }
-            
-            viewModel.enableSignInButton.producer.startWithNext { isEnabled in
-                self.signInButton.enabled = isEnabled
-            }
-            
-            loadingActivityIndicatorView.rac_hidden <~ viewModel.isSignInExecuting.producer.map({ !$0 })
-            signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
+    // MARK: - View Model Bindings
+    
+    func setupViewModelBindings() {
+        guard let viewModel = self.signInViewModel else {
+            print("There was an error creating the view model")
+            return
         }
+        
+        let emailProducer = emailTextField.rac_textSignalProducer()
+        viewModel.email <~ emailProducer
+        viewModel.isValidEmail.producer.startWithNext { isValid in
+            if (isValid) {
+                print("email is valid")
+            }
+        }
+        
+        let passwordProducer = passwordTextField.rac_textSignalProducer()
+        viewModel.password <~ passwordProducer
+        viewModel.isValidPassword.producer.startWithNext { isValid in
+            if (isValid) {
+                print("password is valid")
+            }
+        }
+        
+        viewModel.enableSignInButton.producer.startWithNext { isEnabled in
+            self.signInButton.enabled = isEnabled
+        }
+        
+        loadingActivityIndicatorView.rac_hidden <~ viewModel.isSignInExecuting.producer.map({ !$0 })
+        signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
     }
-
 }
 
