@@ -13,6 +13,7 @@ import Result
 class GFMSignInViewModel: GFMViewModel {
     
     private var signInModel: GFMSignInModel
+    
     let email: MutableProperty<String> = MutableProperty("")
     let password: MutableProperty<String> = MutableProperty("")
 
@@ -44,6 +45,8 @@ class GFMSignInViewModel: GFMViewModel {
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
     }
     
+    // MARK: - Mutable Property Bindings
+    
     func checkValidEmail(emailInput: String) -> Bool {
         return emailInput.characters.count > 3
     }
@@ -51,6 +54,8 @@ class GFMSignInViewModel: GFMViewModel {
     func checkValidPassword(passwordInput: String) -> Bool {
         return passwordInput.characters.count > 3
     }
+    
+    // MARK: - Model Actions
 
     func executeSignIn() {
         self.services.signIn(self.email.value, password: self.password.value) {
