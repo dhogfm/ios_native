@@ -14,13 +14,13 @@ class GFMSignInTokens: NSObject {
     let userId: String
     
     init(responseDict: NSDictionary?) {
-        let responseCsrf: String = responseDict?["csrf"] as? String ?? ""
+        let responseCsrf = responseDict?["csrf"] as? String ?? ""
         self.csrf = responseCsrf
 
         let responsePassport = responseDict?["passport"] as? String ?? ""
         self.passport = responsePassport;
         
-        let responseUserId : String = responseDict?["user_id"] as? String ?? ""
+        let responseUserId = responseDict?["user_id"] as? String ?? ""
         self.userId = responseUserId;
     }
     
