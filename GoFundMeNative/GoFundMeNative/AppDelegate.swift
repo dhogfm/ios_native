@@ -27,7 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.backgroundColor = UIColor.whiteColor()
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+        guard let navigationController = mainStoryboard.instantiateInitialViewController() as? UINavigationController else {
+            print("There was an error fetching navigation controller")
+            return false
+        }
+        
+        guard let signInViewController = navigationController.viewControllers[0] as? GFMSignInViewController else {
             print("There was a problem fetching the Sign In View Controller from Storyboard")
             return false
         }
@@ -37,9 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
         signInViewController.signInViewModel = signInViewModel
         
-        window.rootViewController = signInViewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
-        
         
         return true
     }
