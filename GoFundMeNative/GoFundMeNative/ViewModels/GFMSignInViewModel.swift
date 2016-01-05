@@ -26,9 +26,8 @@ class GFMSignInViewModel: GFMViewModel {
     
     // Actions
     lazy var signInTapAction: Action<Void, Void, NSError> = { [unowned self] in
-        return Action( { _ in
-            self.executeSignIn()
-            return SignalProducer.empty
+        return Action(enabledIf: self.enableSignInButton, { _ in
+            return self.executeSignIn()
         })
     }()
     
@@ -60,7 +59,7 @@ class GFMSignInViewModel: GFMViewModel {
     
     // MARK: - Model Actions
 
-    func executeSignIn() {
+    func executeSignIn() -> SignalProducer<Void, NSError>{
         self.isSignInExecuting.value = true
         self.services.signIn(self.email.value, password: self.password.value) { [unowned self]
             (tokens) in
@@ -68,5 +67,6 @@ class GFMSignInViewModel: GFMViewModel {
             
             self.services.navigateToPage(.Account, animated: true)
         }
+        return SignalProducer.empty
     }
 }

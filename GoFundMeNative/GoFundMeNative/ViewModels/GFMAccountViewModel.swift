@@ -17,8 +17,7 @@ class GFMAccountViewModel: GFMViewModel {
     // Actions
     lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
         return Action( { _ in
-            self.executeSignOut()
-            return SignalProducer.empty
+            return self.executeSignOut()
         })
     }()
     
@@ -32,7 +31,8 @@ class GFMAccountViewModel: GFMViewModel {
     
     // MARK: - Model Actions
     
-    func executeSignOut() {
+    func executeSignOut() -> SignalProducer<Void, NSError> {
         services.popToSignIn()
+        return SignalProducer.empty
     }
 }
