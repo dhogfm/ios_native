@@ -22,7 +22,6 @@ class GFMAccountViewController: UIViewController {
         if let userId = accountViewModel?.userObject.userId {
             self.userIDLabel.text! += " \(userId)"
         }
-
     }
     
     // MARK: - View Model Bindings

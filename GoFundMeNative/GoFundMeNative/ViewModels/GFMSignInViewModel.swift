@@ -62,7 +62,7 @@ class GFMSignInViewModel: GFMViewModel {
 
     func executeSignIn() {
         self.isSignInExecuting.value = true
-        self.services.signIn(self.email.value, password: self.password.value) {
+        self.services.signIn(self.email.value, password: self.password.value) { [unowned self]
             (tokens) in
             self.isSignInExecuting.value = false
             
