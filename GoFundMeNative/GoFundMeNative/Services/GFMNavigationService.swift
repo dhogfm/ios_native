@@ -15,15 +15,47 @@ enum PageType: String {
 
 class GFMNavigationService: NSObject {
     
-    let navigationController: UINavigationController?
+    private let navigationController: UINavigationController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         super.init()
     }
     
-    func navigateToPage(fromViewController: UIViewController, pageType: PageType, animated: Bool) {
+    func navigateToPage(pageType: PageType, animated: Bool) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        switch pageType {
+        case .SignIn:
+            guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+                print("There was a problem fetching the Sign In View Controller from Storyboard")
+                return
+            }
+            
+            navigationController?.pushViewController(signInViewController, animated: animated)
+        case .Account:
+            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMSignInViewController else {
+                print("There was a problem fetching the Account View Controller from Storyboard")
+                return
+            }
+            
+            navigationController?.pushViewController(accountViewController, animated: animated)
+        }
+    }
+    
+    func popToSignIn(services: GFMServices) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+            print("There was a problem fetching the Sign In View Controller from Storyboard")
+            return
+        }
         
+        let signInModel = GFMSignInModel()
+        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+        signInViewController.signInViewModel = signInViewModel
+        
+        navigationController?.viewControllers = [ signInViewController ]
     }
 
 }

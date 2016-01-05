@@ -16,11 +16,16 @@ typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
 // What's the best practice on constants?
 let defaultsUserIdKey = "userId"
 
+class UserState: NSObject {
+    var userId: String = ""
+}
+
 class GFMServices: NSObject {
     
     private let persistenceService = GFMPersistenceService()
     private let networkService = GFMNetworkService()
     var navigationService: GFMNavigationService?
+    var userState = UserState()
     
     func initializeApp() -> Bool {
         var isLoggedIn = false
@@ -76,6 +81,7 @@ class GFMServices: NSObject {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.valueForKey(defaultsUserIdKey)
         if let uid = userId as? String {
+            userState.userId = uid
             return persistenceService.storedUserObject(uid)
         } else {
             return nil
@@ -84,5 +90,15 @@ class GFMServices: NSObject {
     
     private func handleIsLoggedIn(isLoggedIn: Bool) {
         NSLog("User is logged in: \(isLoggedIn)")
+    }
+    
+    // MARK: - Navigation Service
+    
+    func navigateToPage(pageType: PageType, animated: Bool) {
+        self.navigationService?.navigateToPage(pageType, animated: animated)
+    }
+    
+    func popToSignIn() {
+        self.navigationService?.popToSignIn(self)
     }
 }

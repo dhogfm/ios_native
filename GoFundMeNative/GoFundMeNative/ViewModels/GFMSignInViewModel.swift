@@ -61,6 +61,8 @@ class GFMSignInViewModel: GFMViewModel {
         self.services.signIn(self.email.value, password: self.password.value) {
             (tokens) in
             self.isSignInExecuting.value = false
+            
+            self.services.navigateToPage(.Account, animated: true)
         }
     }
 }
