@@ -12,20 +12,27 @@ import Result
 
 class GFMAccountViewModel: GFMViewModel {
     
-    let userObject: UserState
-
+    // Inputs
+    
+    // Outputs
+    var userId: MutableProperty<String> = MutableProperty("")
+    
     // Actions
     lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
         return Action( { _ in
             return self.executeSignOut()
         })
     }()
-    
     var signOutCocoaAction: CocoaAction!
 
+    private let userObject: UserState
+    
     init(user: UserState, services: GFMServices) {
         userObject = user
         super.init(services: services)
+        
+        userId = userObject.userId
+        
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
     }
     

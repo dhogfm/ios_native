@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ReactiveCocoa
 
 typealias BoolParameterBlock = (isTrue: Bool) -> ()
 typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()
@@ -17,7 +18,7 @@ typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
 let defaultsUserIdKey = "userId"
 
 class UserState: NSObject {
-    var userId: String = ""
+    var userId: MutableProperty<String> = MutableProperty("")
 }
 
 class GFMServices: NSObject {
@@ -81,7 +82,7 @@ class GFMServices: NSObject {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.valueForKey(defaultsUserIdKey)
         if let uid = userId as? String {
-            userState.userId = uid
+            userState.userId.value = uid
             return persistenceService.storedUserObject(uid)
         } else {
             return nil

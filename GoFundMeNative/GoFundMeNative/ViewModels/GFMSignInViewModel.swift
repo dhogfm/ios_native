@@ -19,7 +19,7 @@ class GFMSignInViewModel: GFMViewModel {
     let password: MutableProperty<String> = MutableProperty("")
 
     // Outputs
-    var isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
+    let isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)

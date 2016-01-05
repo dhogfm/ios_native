@@ -19,9 +19,9 @@ class GFMAccountViewController: UIViewController {
         super.viewDidLoad()
         self.setupViewModelBindings()
         
-        if let userId = accountViewModel?.userObject.userId {
-            self.userIDLabel.text! += " \(userId)"
-        }
+//        if let userId = accountViewModel?.userObject.userId {
+//            self.userIDLabel.text! += " \(userId)"
+//        }
     }
     
     // MARK: - View Model Bindings
@@ -33,6 +33,8 @@ class GFMAccountViewController: UIViewController {
         }
         
         signOutButton.addTarget(viewModel.signOutCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
+    
+        self.userIDLabel.rac_text <~ viewModel.userId
     }
 
 }
