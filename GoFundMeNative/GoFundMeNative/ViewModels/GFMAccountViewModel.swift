@@ -33,7 +33,6 @@ class GFMAccountViewModel: GFMViewModel {
     // MARK: - Model Actions
     
     func executeSignOut() {
-        print("Sign out call to Services")
+        services.popToSignIn()
     }
-
 }

@@ -15,7 +15,7 @@ enum PageType: String {
 
 class GFMNavigationService: NSObject {
     
-    let navigationController: UINavigationController?
+    private let navigationController: UINavigationController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -43,8 +43,19 @@ class GFMNavigationService: NSObject {
         }
     }
     
-    func popToSignIn() {
+    func popToSignIn(services: GFMServices) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+            print("There was a problem fetching the Sign In View Controller from Storyboard")
+            return
+        }
         
+        let signInModel = GFMSignInModel()
+        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+        signInViewController.signInViewModel = signInViewModel
+        
+        navigationController?.viewControllers = [ signInViewController ]
     }
 
 }

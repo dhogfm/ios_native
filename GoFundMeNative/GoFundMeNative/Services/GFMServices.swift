@@ -97,4 +97,8 @@ class GFMServices: NSObject {
     func navigateToPage(pageType: PageType, animated: Bool) {
         self.navigationService?.navigateToPage(pageType, animated: animated)
     }
+    
+    func popToSignIn() {
+        self.navigationService?.popToSignIn(self)
+    }
 }
