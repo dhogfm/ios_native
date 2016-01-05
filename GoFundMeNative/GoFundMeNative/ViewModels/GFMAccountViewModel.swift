@@ -38,8 +38,11 @@ class GFMAccountViewModel: GFMViewModel {
     
     // MARK: - Model Actions
     
-    func executeSignOut() -> SignalProducer<Void, NSError> {
-        services.popToSignIn()
+    func executeSignOut() -> SignalProducer<Void, NSError>  {
+        let signInModel = GFMSignInModel()
+        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+
+        services.popToSignIn(signInViewModel)
         return SignalProducer.empty
     }
 }

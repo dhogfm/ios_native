@@ -64,6 +64,8 @@ class GFMServices: NSObject {
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setObject(tokens.userId, forKey: defaultsUserIdKey)
                 defaults.synchronize()
+                
+                self.userState.userId.value = tokens.userId
             }
             completed(tokens: signInTokens)
         })
@@ -95,11 +97,11 @@ class GFMServices: NSObject {
     
     // MARK: - Navigation Service
     
-    func navigateToPage(pageType: PageType, animated: Bool) {
-        self.navigationService?.navigateToPage(pageType, animated: animated)
+    func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
+        self.navigationService?.navigateToPage(pageType, viewModel: viewModel, animated: animated)
     }
     
-    func popToSignIn() {
-        self.navigationService?.popToSignIn(self)
+    func popToSignIn(viewModel: GFMSignInViewModel) {
+        self.navigationService?.popToSignIn(self, viewModel: viewModel)
     }
 }

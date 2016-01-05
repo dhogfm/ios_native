@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum PageType: String {
-    case SignIn = "SignInViewController",
-         Account = "AccountViewController"
-}
-
 class GFMNavigationService: NSObject {
     
     private let navigationController: UINavigationController?
@@ -22,40 +17,55 @@ class GFMNavigationService: NSObject {
         super.init()
     }
     
-    func navigateToPage(pageType: PageType, animated: Bool) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
+    // MARK: - Navigation Methods
+    
+    func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
         switch pageType {
         case .SignIn:
-            guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
-                print("There was a problem fetching the Sign In View Controller from Storyboard")
-                return
+            if let signInViewController = self.fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
+                
+                if viewModel.isKindOfClass(GFMSignInViewModel) {
+                    signInViewController.signInViewModel = viewModel as? GFMSignInViewModel
+                }
+                
+                navigationController?.pushViewController(signInViewController, animated: animated)
             }
-            
-            navigationController?.pushViewController(signInViewController, animated: animated)
         case .Account:
-            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMAccountViewController else {
-                print("There was a problem fetching the Account View Controller from Storyboard")
-                return
+            if let accountViewController = self.fetchViewControllerWithIdentifier(PageType.Account.rawValue) as? GFMAccountViewController {
+                
+                if viewModel.isKindOfClass(GFMAccountViewModel) {
+                    accountViewController.accountViewModel = viewModel as? GFMAccountViewModel
+                }
+                
+                navigationController?.pushViewController(accountViewController, animated: animated)
             }
-            
-            navigationController?.pushViewController(accountViewController, animated: animated)
         }
     }
     
-    func popToSignIn(services: GFMServices) {
+    func popToSignIn(services: GFMServices, viewModel: GFMSignInViewModel) {
+        if let signInViewController = self.fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
+            
+            if viewModel.isKindOfClass(GFMSignInViewModel) {
+                signInViewController.signInViewModel = viewModel
+            }
+            
+            navigationController?.viewControllers = [ signInViewController ]
+        }
+    }
+    
+    // MARK: - Helper Methods
+    
+    func fetchViewControllerWithIdentifier(storyboardIdentifier: String) -> UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
-            print("There was a problem fetching the Sign In View Controller from Storyboard")
-            return
+        
+        guard let viewController = mainStoryboard.instantiateViewControllerWithIdentifier(storyboardIdentifier) as UIViewController? else {
+            print(Constants.Errors.ViewControllerFetchError + storyboardIdentifier)
+            return UIViewController()
         }
         
-        let signInModel = GFMSignInModel()
-        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
-        signInViewController.signInViewModel = signInViewModel
-        
-        navigationController?.viewControllers = [ signInViewController ]
+        return viewController
     }
+    
+    
 
 }
