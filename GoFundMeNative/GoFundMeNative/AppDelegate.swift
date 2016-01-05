@@ -41,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return false
             }
             
-            let userModel = services.loadStoredUser() ?? UserObject()
-            let accountViewModel = GFMAccountViewModel.init(user: userModel, services: services)
+            let accountViewModel = GFMAccountViewModel.init(user: services.userState, services: services)
             accountViewController.accountViewModel = accountViewModel
             
             navigationController.viewControllers = [ accountViewController ]

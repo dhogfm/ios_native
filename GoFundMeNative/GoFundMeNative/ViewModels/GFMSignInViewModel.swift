@@ -63,7 +63,7 @@ class GFMSignInViewModel: GFMViewModel {
             NSLog("%@", tokens!)
             self.isSignInExecuting.value = false
             
-            self.services.navigateToPage(PageType.Account, animated: true)
+            self.services.navigateToPage(.Account, animated: true)
         }
     }
 }

@@ -42,5 +42,9 @@ class GFMNavigationService: NSObject {
             navigationController?.pushViewController(accountViewController, animated: animated)
         }
     }
+    
+    func popToSignIn() {
+        
+    }
 
 }

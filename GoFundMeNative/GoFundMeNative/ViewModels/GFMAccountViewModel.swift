@@ -12,12 +12,12 @@ import Result
 
 class GFMAccountViewModel: GFMViewModel {
     
-    let userObject: UserObject
+    let userObject: UserState
 
     var signOutTapAction: Action<Void, Void, NSError>!
     var signOutCocoaAction: CocoaAction!
 
-    init(user: UserObject, services: GFMServices) {
+    init(user: UserState, services: GFMServices) {
         userObject = user
         
         super.init(services: services)
