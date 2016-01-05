@@ -34,7 +34,7 @@ class GFMNavigationService: NSObject {
             
             navigationController?.pushViewController(signInViewController, animated: animated)
         case .Account:
-            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMSignInViewController else {
+            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMAccountViewController else {
                 print("There was a problem fetching the Account View Controller from Storyboard")
                 return
             }

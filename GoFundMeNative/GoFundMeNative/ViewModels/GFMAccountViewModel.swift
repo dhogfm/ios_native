@@ -14,7 +14,14 @@ class GFMAccountViewModel: GFMViewModel {
     
     let userObject: UserState
 
-    var signOutTapAction: Action<Void, Void, NSError>!
+    // Actions
+    lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
+        return Action( { _ in
+            self.executeSignOut()
+            return SignalProducer.empty
+        })
+    }()
+    
     var signOutCocoaAction: CocoaAction!
 
     init(user: UserState, services: GFMServices) {
@@ -22,10 +29,7 @@ class GFMAccountViewModel: GFMViewModel {
         
         super.init(services: services)
                 
-        signOutTapAction = Action<Void, Void, NSError>() {
-            self.executeSignOut()
-            return SignalProducer.empty
-        }
+        
         
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
     }

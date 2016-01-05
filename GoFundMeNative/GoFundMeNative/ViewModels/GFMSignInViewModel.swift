@@ -14,17 +14,26 @@ class GFMSignInViewModel: GFMViewModel {
     
     private var signInModel: GFMSignInModel
     
+    // Inputs
     let email: MutableProperty<String> = MutableProperty("")
     let password: MutableProperty<String> = MutableProperty("")
 
+    // Outputs
+    var isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
-    var signInTapAction: Action<Void, Void, NSError>!
+    // Actions
+    lazy var signInTapAction: Action<Void, Void, NSError> = { [unowned self] in
+        return Action( { _ in
+            self.executeSignIn()
+            return SignalProducer.empty
+        })
+    }()
+    
     var signInCocoaAction: CocoaAction!
     
-    var isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     
     init(model: GFMSignInModel, services: GFMServices) {
         signInModel = model
@@ -35,11 +44,6 @@ class GFMSignInViewModel: GFMViewModel {
         isValidPassword <~ self.password.producer.map(self.checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
-        
-        signInTapAction = Action<Void, Void, NSError>() {
-            self.executeSignIn()
-            return SignalProducer.empty
-        }
     
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
     }
