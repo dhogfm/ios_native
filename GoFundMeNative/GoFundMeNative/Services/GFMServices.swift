@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()
 typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
@@ -18,7 +19,32 @@ class GFMServices: NSObject {
     
     private let persistenceService = GFMPersistenceService()
     private let networkService = GFMNetworkService()
+    var navigationService: GFMNavigationService?
     
+    func initializeApp() -> Bool {
+        var isLoggedIn = false
+        if let userObject = self.loadStoredUser() {
+            gfm_csrf = userObject.csrf
+            gfm_passport = userObject.passport
+            isLoggedIn = true
+        }
+        
+        networkService.request(.InitializeApp, completion: {
+            (success, responseDict, error) in
+            if (success) {
+                if let csrf : String = responseDict?["csrf"] as? String {
+                    gfm_csrf = csrf
+                }
+                
+                if let isLoggedIn : Bool = responseDict?["loggedIn"] as? Bool {
+                    self.handleIsLoggedIn(isLoggedIn)
+                }
+            }
+        })
+        
+        return isLoggedIn
+    }
+
     func signIn(email: String, password: String, completed: SignInSuccessBlock) {
         networkService.request(.SignIn(email, password), completion: {
             (success, responseDict, error) in
@@ -34,30 +60,6 @@ class GFMServices: NSObject {
             }
             completed(tokens: signInTokens)
         })
-    }
-    
-    func initializeApp() -> Bool {
-        var isLoggedIn = false
-        if let userObject = self.loadStoredUser() {
-            gfm_csrf = userObject.csrf
-            gfm_passport = userObject.passport
-            isLoggedIn = true
-        }
-
-        networkService.request(.InitializeApp, completion: {
-            (success, responseDict, error) in
-            if (success) {
-                if let csrf : String = responseDict?["csrf"] as? String {
-                    gfm_csrf = csrf
-                }
-                
-                if let isLoggedIn : Bool = responseDict?["loggedIn"] as? Bool {
-                   self.handleIsLoggedIn(isLoggedIn)
-                }
-            }
-        })
-        
-        return isLoggedIn
     }
     
     private func loadStoredUser() -> UserObject? {
