@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum PageType: String {
-    case SignIn = "SignInViewController",
-         Account = "AccountViewController"
-}
-
 class GFMNavigationService: NSObject {
     
     private let navigationController: UINavigationController?
@@ -64,7 +59,7 @@ class GFMNavigationService: NSObject {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let viewController = mainStoryboard.instantiateViewControllerWithIdentifier(storyboardIdentifier) as UIViewController? else {
-            print("There was a problem fetching the View Controller with identifier \(storyboardIdentifier) from Storyboard")
+            print(Constants.Errors.ViewControllerFetchError + storyboardIdentifier)
             return UIViewController()
         }
         

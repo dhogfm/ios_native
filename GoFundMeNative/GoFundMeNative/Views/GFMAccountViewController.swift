@@ -28,7 +28,7 @@ class GFMAccountViewController: UIViewController {
     
     func setupViewModelBindings() {
         guard let viewModel = self.accountViewModel else {
-            print("There was an error creating the view model")
+            print(Constants.Errors.ViewModelCreationError)
             return
         }
         

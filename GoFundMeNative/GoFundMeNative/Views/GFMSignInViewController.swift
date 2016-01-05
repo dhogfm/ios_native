@@ -26,7 +26,7 @@ class GFMSignInViewController: UIViewController {
     
     func setupViewModelBindings() {
         guard let viewModel = self.signInViewModel else {
-            print("There was an error creating the view model")
+            print(Constants.Errors.ViewModelCreationError)
             return
         }
         
