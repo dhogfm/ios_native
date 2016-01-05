@@ -13,7 +13,7 @@ import Result
 class GFMAccountViewModel: GFMViewModel {
     
     let userObject: UserState
-
+    
     // Actions
     lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
         return Action( { _ in

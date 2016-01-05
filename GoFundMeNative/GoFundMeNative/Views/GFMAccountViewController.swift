@@ -17,17 +17,18 @@ class GFMAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewModelBindings()
         
-        if let userId = accountViewModel?.userObject.userId {
-            self.userIDLabel.text! += " \(userId)"
-        }
+        self.title = Constants.PageTitles.AccountPageTitle
+        
+        setupViewModelBindings()
+        
+        DynamicProperty(object: userIDLabel, keyPath: "text") <~ (accountViewModel?.userObject.userId.producer.map({ $0 as AnyObject? }))!
     }
     
     // MARK: - View Model Bindings
     
     func setupViewModelBindings() {
-        guard let viewModel = self.accountViewModel else {
+        guard let viewModel = accountViewModel else {
             print(Constants.Errors.ViewModelCreationError)
             return
         }
