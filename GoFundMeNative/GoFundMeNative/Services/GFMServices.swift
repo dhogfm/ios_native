@@ -16,8 +16,8 @@ let defaultsUserIdKey = "userId"
 
 class GFMServices: NSObject {
     
-    let persistenceService = GFMPersistenceService()
-    let networkService = GFMNetworkService()
+    private let persistenceService = GFMPersistenceService()
+    private let networkService = GFMNetworkService()
     
     func signIn(email: String, password: String, completed: SignInSuccessBlock) {
         networkService.request(.SignIn(email, password), completion: {
@@ -60,7 +60,7 @@ class GFMServices: NSObject {
         return isLoggedIn
     }
     
-    func loadStoredUser() -> UserObject? {
+    private func loadStoredUser() -> UserObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.valueForKey(defaultsUserIdKey)
         if let uid = userId as? String {
@@ -70,7 +70,7 @@ class GFMServices: NSObject {
         }
     }
     
-    func handleIsLoggedIn(isLoggedIn: Bool) {
+    private func handleIsLoggedIn(isLoggedIn: Bool) {
         NSLog("User is logged in: \(isLoggedIn)")
     }
 }
