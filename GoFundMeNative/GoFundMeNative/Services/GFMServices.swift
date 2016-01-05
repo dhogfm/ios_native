@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+typealias BoolParameterBlock = (isTrue: Bool) -> ()
 typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()
 typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
 
@@ -17,8 +18,8 @@ let defaultsUserIdKey = "userId"
 
 class GFMServices: NSObject {
     
-    let persistenceService = GFMPersistenceService()
-    let networkService = GFMNetworkService()
+    private let persistenceService = GFMPersistenceService()
+    private let networkService = GFMNetworkService()
     var navigationService: GFMNavigationService?
     
     func initializeApp() -> Bool {
@@ -44,7 +45,7 @@ class GFMServices: NSObject {
         
         return isLoggedIn
     }
-    
+
     func signIn(email: String, password: String, completed: SignInSuccessBlock) {
         networkService.request(.SignIn(email, password), completion: {
             (success, responseDict, error) in
@@ -62,7 +63,16 @@ class GFMServices: NSObject {
         })
     }
     
-    func loadStoredUser() -> UserObject? {
+    func signOut(completed: BoolParameterBlock) {
+        networkService.request(.SignOut, completion: {
+            (success, responseDict, error) in
+            completed(isTrue: success)
+        })
+    }
+    
+    // MARK: - Private methods
+    
+    private func loadStoredUser() -> UserObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.valueForKey(defaultsUserIdKey)
         if let uid = userId as? String {
@@ -72,7 +82,7 @@ class GFMServices: NSObject {
         }
     }
     
-    func handleIsLoggedIn(isLoggedIn: Bool) {
+    private func handleIsLoggedIn(isLoggedIn: Bool) {
         NSLog("User is logged in: \(isLoggedIn)")
     }
     
