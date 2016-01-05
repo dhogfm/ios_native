@@ -28,8 +28,6 @@ class GFMAccountViewModel: GFMViewModel {
         userObject = user
         
         super.init(services: services)
-                
-        
         
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
     }
@@ -37,6 +35,9 @@ class GFMAccountViewModel: GFMViewModel {
     // MARK: - Model Actions
     
     func executeSignOut() {
-        services.popToSignIn()
+        let signInModel = GFMSignInModel()
+        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+
+        services.popToSignIn(signInViewModel)
     }
 }
