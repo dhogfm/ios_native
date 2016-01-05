@@ -41,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return false
             }
             
+            let userModel = services.loadStoredUser() ?? UserObject()
+            let accountViewModel = GFMAccountViewModel.init(user: userModel, services: services)
+            accountViewController.accountViewModel = accountViewModel
+            
             navigationController.viewControllers = [ accountViewController ]
         } else {
             guard let signInViewController = navigationController.viewControllers[0] as? GFMSignInViewController else {

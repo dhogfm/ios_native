@@ -22,8 +22,25 @@ class GFMNavigationService: NSObject {
         super.init()
     }
     
-    func navigateToPage(fromViewController: UIViewController, pageType: PageType, animated: Bool) {
-        
+    func navigateToPage(pageType: PageType, animated: Bool) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        switch pageType {
+        case .SignIn:
+            guard let signInViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SignInViewController") as? GFMSignInViewController else {
+                print("There was a problem fetching the Sign In View Controller from Storyboard")
+                return
+            }
+            
+            navigationController?.pushViewController(signInViewController, animated: animated)
+        case .Account:
+            guard let accountViewController = mainStoryboard.instantiateViewControllerWithIdentifier("AccountViewController") as? GFMSignInViewController else {
+                print("There was a problem fetching the Account View Controller from Storyboard")
+                return
+            }
+            
+            navigationController?.pushViewController(accountViewController, animated: animated)
+        }
     }
 
 }

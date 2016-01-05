@@ -75,4 +75,10 @@ class GFMServices: NSObject {
     func handleIsLoggedIn(isLoggedIn: Bool) {
         NSLog("User is logged in: \(isLoggedIn)")
     }
+    
+    // MARK: - Navigation Service
+    
+    func navigateToPage(pageType: PageType, animated: Bool) {
+        self.navigationService?.navigateToPage(pageType, animated: animated)
+    }
 }
