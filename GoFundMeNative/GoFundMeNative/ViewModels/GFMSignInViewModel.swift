@@ -37,7 +37,6 @@ class GFMSignInViewModel: GFMViewModel {
             .map { $0 && $1 }
         
         signInTapAction = Action<Void, Void, NSError>() {
-            self.isSignInExecuting.value = true
             self.executeSignIn()
             return SignalProducer.empty
         }
@@ -58,9 +57,9 @@ class GFMSignInViewModel: GFMViewModel {
     // MARK: - Model Actions
 
     func executeSignIn() {
+        self.isSignInExecuting.value = true
         self.services.signIn(self.email.value, password: self.password.value) {
             (tokens) in
-            NSLog("%@", tokens!)
             self.isSignInExecuting.value = false
         }
     }
