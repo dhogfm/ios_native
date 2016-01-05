@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+typealias BoolParameterBlock = (isTrue: Bool) -> ()
 typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()
 typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
 
@@ -61,6 +62,15 @@ class GFMServices: NSObject {
             completed(tokens: signInTokens)
         })
     }
+    
+    func signOut(completed: BoolParameterBlock) {
+        networkService.request(.SignOut, completion: {
+            (success, responseDict, error) in
+            completed(isTrue: success)
+        })
+    }
+    
+    // MARK: - Private methods
     
     private func loadStoredUser() -> UserObject? {
         let defaults = NSUserDefaults.standardUserDefaults()

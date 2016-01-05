@@ -30,6 +30,7 @@ let GoFundMeProvider = MoyaProvider<GoFundMe>(endpointClosure: endpointClosure)
 public enum GoFundMe {
     case InitializeApp
     case SignIn(String, String)
+    case SignOut
 }
 var gfm_csrf = ""
 var gfm_passport = ""
@@ -42,6 +43,8 @@ extension GoFundMe: TargetType {
             return NSURL(string: "https://funds.gofundme.com/index.php")!
         case .SignIn:
             return NSURL(string: "https://www.gofundme.com/mvc.php")!
+        case .SignOut:
+            return NSURL(string: "https://funds.gofundme.com/")!
         
         }
     }
@@ -52,6 +55,8 @@ extension GoFundMe: TargetType {
             return ""
         case .SignIn:
             return "?route=index/postsignin"
+        case .SignOut:
+            return "mobile/user/signout"
         }
     }
         
@@ -61,6 +66,8 @@ extension GoFundMe: TargetType {
             return .GET
         case .SignIn:
             return .POST
+        case .SignOut:
+            return .GET
         }
     }
         
@@ -73,6 +80,8 @@ extension GoFundMe: TargetType {
                     "safeid" : gfm_csrf,
                     "Login[email]" : email,
                     "Login[password]" : password]
+        case .SignOut:
+            return nil
         }
     }
     
