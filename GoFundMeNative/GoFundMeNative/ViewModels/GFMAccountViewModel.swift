@@ -26,11 +26,7 @@ class GFMAccountViewModel: GFMViewModel {
 
     init(user: UserState, services: GFMServices) {
         userObject = user
-        
         super.init(services: services)
-                
-        
-        
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
     }
     

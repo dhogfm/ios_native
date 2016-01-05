@@ -35,7 +35,7 @@ class GFMServices: NSObject {
             isLoggedIn = true
         }
         
-        networkService.request(.InitializeApp, completion: {
+        networkService.request(.InitializeApp, completion: { [unowned self]
             (success, responseDict, error) in
             if (success) {
                 if let csrf : String = responseDict?["csrf"] as? String {
@@ -52,7 +52,7 @@ class GFMServices: NSObject {
     }
 
     func signIn(email: String, password: String, completed: SignInSuccessBlock) {
-        networkService.request(.SignIn(email, password), completion: {
+        networkService.request(.SignIn(email, password), completion: { [unowned self]
             (success, responseDict, error) in
             var signInTokens : GFMSignInTokens?
             if (success) {
