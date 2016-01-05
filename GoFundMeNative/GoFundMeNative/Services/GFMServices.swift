@@ -26,7 +26,7 @@ class GFMServices: NSObject {
     private let persistenceService = GFMPersistenceService()
     private let networkService = GFMNetworkService()
     var navigationService: GFMNavigationService?
-    var userState = UserState()
+    let userState = UserState()
     
     func initializeApp() -> Bool {
         var isLoggedIn = false

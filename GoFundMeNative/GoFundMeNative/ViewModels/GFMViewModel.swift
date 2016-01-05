@@ -10,7 +10,7 @@ import UIKit
 
 class GFMViewModel: NSObject {
     
-    var services: GFMServices
+    let services: GFMServices
     
     init(services: GFMServices) {
         self.services = services

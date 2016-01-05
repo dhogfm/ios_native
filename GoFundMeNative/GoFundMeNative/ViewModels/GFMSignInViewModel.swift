@@ -12,7 +12,7 @@ import Result
 
 class GFMSignInViewModel: GFMViewModel {
     
-    private var signInModel: GFMSignInModel
+    private let signInModel: GFMSignInModel
     
     // Inputs
     let email: MutableProperty<String> = MutableProperty("")
