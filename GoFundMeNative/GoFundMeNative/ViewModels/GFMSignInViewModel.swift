@@ -45,20 +45,8 @@ class GFMSignInViewModel: GFMViewModel {
         isValidPassword <~ password.producer.map(checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 && !self.signInTapAction.executing.value }
-        emailTextFieldTextColor <~ isValidEmail.producer.map {
-            if (!self.hasTappedSignIn) {
-                return UIColor.blackColor()
-            } else {
-                return $0 && self.hasTappedSignIn ? UIColor.blackColor() : UIColor.redColor()
-            }
-        }
-        passwordTextFieldTextColor <~ isValidPassword.producer.map {
-            if (!self.hasTappedSignIn) {
-                return UIColor.blackColor()
-            } else {
-                return $0 && self.hasTappedSignIn ? UIColor.blackColor() : UIColor.redColor()
-            }
-        }
+        emailTextFieldTextColor <~ isValidEmail.producer.map(validatedTextColor)
+        passwordTextFieldTextColor <~ isValidPassword.producer.map(validatedTextColor)
     
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
         
@@ -99,6 +87,14 @@ class GFMSignInViewModel: GFMViewModel {
     func checkValidPassword(passwordInput: String) -> Bool {
         // TODO: get password validation code from server
         return passwordInput.characters.count > 3
+    }
+    
+    private func validatedTextColor(isValid: Bool) -> UIColor {
+        if (!self.hasTappedSignIn) {
+            return UIColor.blackColor()
+        } else {
+            return isValid ? UIColor.blackColor() : UIColor.redColor()
+        }
     }
     
     // MARK: - Model Actions
