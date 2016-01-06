@@ -17,24 +17,23 @@ class GFMAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewModelBindings()
         
-//        if let userId = accountViewModel?.userObject.userId {
-//            self.userIDLabel.text! += " \(userId)"
-//        }
+        title = Constants.PageTitles.AccountPageTitle
+        
+        setupViewModelBindings()
+        
+        DynamicProperty(object: userIDLabel, keyPath: "text") <~ (accountViewModel?.userId.producer.map({ $0 as AnyObject? }))!
     }
     
     // MARK: - View Model Bindings
     
     func setupViewModelBindings() {
-        guard let viewModel = self.accountViewModel else {
+        guard let viewModel = accountViewModel else {
             print(Constants.Errors.ViewModelCreationError)
             return
         }
         
         signOutButton.addTarget(viewModel.signOutCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
-    
-        self.userIDLabel.rac_text <~ viewModel.userId
     }
 
 }

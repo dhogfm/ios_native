@@ -20,6 +20,8 @@ class GFMSignInModel: NSObject {
     init(emailString : String, passwordString : String) {
         self.emailString = emailString
         self.passwordString = passwordString
+        
+        super.init()
     }
 
 }

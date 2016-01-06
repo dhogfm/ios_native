@@ -12,7 +12,7 @@ import Result
 
 class GFMSignInViewModel: GFMViewModel {
     
-    private var signInModel: GFMSignInModel
+    private let signInModel: GFMSignInModel
     
     // Inputs
     let email: MutableProperty<String> = MutableProperty("")
@@ -36,8 +36,8 @@ class GFMSignInViewModel: GFMViewModel {
         
         super.init(services: services)
         
-        isValidEmail <~ self.email.producer.map(self.checkValidEmail)
-        isValidPassword <~ self.password.producer.map(self.checkValidPassword)
+        isValidEmail <~ email.producer.map(checkValidEmail)
+        isValidPassword <~ password.producer.map(checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
     
