@@ -20,20 +20,39 @@
 		2C8493AF1C3C4831000B6943 /* GFMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493AD1C3C4831000B6943 /* GFMConstants.swift */; };
 		2C8493B11C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
 		2C8493B21C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
-		C9A558A3C3639E50C526242E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC721C4E5C4455DDD3CD04EF /* Pods.framework */; };
 		D40B0F7F1C3DC53F00402432 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
 		D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
 		D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
 		D40B0F821C3DC58700402432 /* GFMAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */; };
 		D40B0F831C3DC58900402432 /* GFMSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E5C1C3354F1000AB6AF /* GFMSignInViewController.swift */; };
+		D40B0F901C3DD21E00402432 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F841C3DD21E00402432 /* Alamofire.framework */; };
+		D40B0F911C3DD21E00402432 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F851C3DD21E00402432 /* Moya.framework */; };
+		D40B0F921C3DD21E00402432 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F861C3DD21E00402432 /* ReactiveCocoa.framework */; };
+		D40B0F931C3DD21E00402432 /* ReactiveMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F871C3DD21E00402432 /* ReactiveMoya.framework */; };
+		D40B0F941C3DD21E00402432 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F881C3DD21E00402432 /* Realm.framework */; };
+		D40B0F951C3DD21E00402432 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F891C3DD21E00402432 /* RealmSwift.framework */; };
+		D40B0F961C3DD21E00402432 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F8A1C3DD21E00402432 /* Result.framework */; };
+		D40B0F971C3DD21E00402432 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F8B1C3DD21E00402432 /* RxBlocking.framework */; };
+		D40B0F981C3DD21E00402432 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F8C1C3DD21E00402432 /* RxCocoa.framework */; };
+		D40B0F991C3DD21E00402432 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F8D1C3DD21E00402432 /* RxMoya.framework */; };
+		D40B0F9A1C3DD21E00402432 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40B0F8E1C3DD21E00402432 /* RxSwift.framework */; };
+		D40B0FAA1C3DD4C000402432 /* Alamofire.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0F9E1C3DD4C000402432 /* Alamofire.framework.dSYM */; };
+		D40B0FAB1C3DD4C000402432 /* Moya.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0F9F1C3DD4C000402432 /* Moya.framework.dSYM */; };
+		D40B0FAC1C3DD4C000402432 /* ReactiveCocoa.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA01C3DD4C000402432 /* ReactiveCocoa.framework.dSYM */; };
+		D40B0FAD1C3DD4C000402432 /* ReactiveMoya.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA11C3DD4C000402432 /* ReactiveMoya.framework.dSYM */; };
+		D40B0FAE1C3DD4C000402432 /* Realm.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA21C3DD4C000402432 /* Realm.framework.dSYM */; };
+		D40B0FAF1C3DD4C000402432 /* RealmSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA31C3DD4C000402432 /* RealmSwift.framework.dSYM */; };
+		D40B0FB01C3DD4C000402432 /* Result.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA41C3DD4C000402432 /* Result.framework.dSYM */; };
+		D40B0FB11C3DD4C000402432 /* RxBlocking.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA51C3DD4C000402432 /* RxBlocking.framework.dSYM */; };
+		D40B0FB21C3DD4C000402432 /* RxCocoa.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA61C3DD4C000402432 /* RxCocoa.framework.dSYM */; };
+		D40B0FB31C3DD4C000402432 /* RxMoya.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA71C3DD4C000402432 /* RxMoya.framework.dSYM */; };
+		D40B0FB41C3DD4C000402432 /* RxSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */; };
+		D40B0FB51C3DD4C000402432 /* RxTests.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
 		D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */; };
 		D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */; };
-		D45CCB671C3324E900DF6542 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB641C3324E900DF6542 /* Alamofire.framework */; };
-		D45CCB681C3324E900DF6542 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */; };
-		D45CCB691C3324E900DF6542 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB661C3324E900DF6542 /* Result.framework */; };
 		D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */; };
 		D4EA8F3E1C3352EA00F66391 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E581C3354A8000AB6AF /* GFMSignInViewModel.swift */; };
@@ -67,6 +86,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D40B0F9D1C3DD4A800402432 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D40B0FAA1C3DD4C000402432 /* Alamofire.framework.dSYM in CopyFiles */,
+				D40B0FAB1C3DD4C000402432 /* Moya.framework.dSYM in CopyFiles */,
+				D40B0FAC1C3DD4C000402432 /* ReactiveCocoa.framework.dSYM in CopyFiles */,
+				D40B0FAD1C3DD4C000402432 /* ReactiveMoya.framework.dSYM in CopyFiles */,
+				D40B0FAE1C3DD4C000402432 /* Realm.framework.dSYM in CopyFiles */,
+				D40B0FAF1C3DD4C000402432 /* RealmSwift.framework.dSYM in CopyFiles */,
+				D40B0FB01C3DD4C000402432 /* Result.framework.dSYM in CopyFiles */,
+				D40B0FB11C3DD4C000402432 /* RxBlocking.framework.dSYM in CopyFiles */,
+				D40B0FB21C3DD4C000402432 /* RxCocoa.framework.dSYM in CopyFiles */,
+				D40B0FB31C3DD4C000402432 /* RxMoya.framework.dSYM in CopyFiles */,
+				D40B0FB41C3DD4C000402432 /* RxSwift.framework.dSYM in CopyFiles */,
+				D40B0FB51C3DD4C000402432 /* RxTests.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMAccountViewController.swift; path = Views/GFMAccountViewController.swift; sourceTree = "<group>"; };
 		2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMNavigationService.swift; path = Services/GFMNavigationService.swift; sourceTree = "<group>"; };
@@ -78,9 +121,30 @@
 		2C8493A51C3B3E8F000B6943 /* GFMAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMAccountViewModel.swift; path = ViewModels/GFMAccountViewModel.swift; sourceTree = "<group>"; };
 		2C8493AD1C3C4831000B6943 /* GFMConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMConstants.swift; path = Helpers/GFMConstants.swift; sourceTree = "<group>"; };
 		2C8493B01C3C483F000B6943 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAC.swift; path = Utils/RAC.swift; sourceTree = "<group>"; };
-		6BA0AE71A9CA4927F0CA60F1 /* Pods.release ad hoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release ad hoc.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release ad hoc.xcconfig"; sourceTree = "<group>"; };
-		84A2A82F05CCE71A5C8421F1 /* Pods.release app store.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods.release app store.xcconfig"; path = "Pods/Target Support Files/Pods/Pods.release app store.xcconfig"; sourceTree = "<group>"; };
-		A5F4EB0B67730CC9617EEF46 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D40B0F841C3DD21E00402432 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D40B0F851C3DD21E00402432 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		D40B0F861C3DD21E00402432 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		D40B0F871C3DD21E00402432 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/iOS/ReactiveMoya.framework; sourceTree = "<group>"; };
+		D40B0F881C3DD21E00402432 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		D40B0F891C3DD21E00402432 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		D40B0F8A1C3DD21E00402432 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		D40B0F8B1C3DD21E00402432 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		D40B0F8C1C3DD21E00402432 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		D40B0F8D1C3DD21E00402432 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		D40B0F8E1C3DD21E00402432 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D40B0F8F1C3DD21E00402432 /* RxTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTests.framework; path = Carthage/Build/iOS/RxTests.framework; sourceTree = "<group>"; };
+		D40B0F9E1C3DD4C000402432 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		D40B0F9F1C3DD4C000402432 /* Moya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Moya.framework.dSYM; path = Carthage/Build/iOS/Moya.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA01C3DD4C000402432 /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA11C3DD4C000402432 /* ReactiveMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveMoya.framework.dSYM; path = Carthage/Build/iOS/ReactiveMoya.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA21C3DD4C000402432 /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/iOS/Realm.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA31C3DD4C000402432 /* RealmSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RealmSwift.framework.dSYM; path = Carthage/Build/iOS/RealmSwift.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA41C3DD4C000402432 /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA51C3DD4C000402432 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA61C3DD4C000402432 /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/iOS/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA71C3DD4C000402432 /* RxMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoya.framework.dSYM; path = Carthage/Build/iOS/RxMoya.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTests.framework.dSYM; path = Carthage/Build/iOS/RxTests.framework.dSYM; sourceTree = "<group>"; };
 		D45CCB201C33131500DF6542 /* GoFundMeNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFundMeNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB231C33131500DF6542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D45CCB281C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,9 +156,6 @@
 		D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeUITests.swift; sourceTree = "<group>"; };
 		D45CCB451C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D45CCB641C3324E900DF6542 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
-		D45CCB661C3324E900DF6542 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Pods/../build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTestCase.swift; sourceTree = "<group>"; };
 		D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoFundMeAPI.swift; sourceTree = "<group>"; };
 		D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMNetworkService.swift; sourceTree = "<group>"; };
@@ -102,7 +163,6 @@
 		D4EA8F4C1C3AE9A100F66391 /* GFMSignInTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSignInTokens.swift; sourceTree = "<group>"; };
 		D4EA8F4F1C3B149000F66391 /* GFMPersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceService.swift; sourceTree = "<group>"; };
 		D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMPersistenceServiceTestCase.swift; sourceTree = "<group>"; };
-		DC721C4E5C4455DDD3CD04EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +170,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D45CCB671C3324E900DF6542 /* Alamofire.framework in Frameworks */,
-				D45CCB681C3324E900DF6542 /* ReactiveCocoa.framework in Frameworks */,
-				D45CCB691C3324E900DF6542 /* Result.framework in Frameworks */,
-				C9A558A3C3639E50C526242E /* Pods.framework in Frameworks */,
+				D40B0F901C3DD21E00402432 /* Alamofire.framework in Frameworks */,
+				D40B0F911C3DD21E00402432 /* Moya.framework in Frameworks */,
+				D40B0F921C3DD21E00402432 /* ReactiveCocoa.framework in Frameworks */,
+				D40B0F931C3DD21E00402432 /* ReactiveMoya.framework in Frameworks */,
+				D40B0F941C3DD21E00402432 /* Realm.framework in Frameworks */,
+				D40B0F951C3DD21E00402432 /* RealmSwift.framework in Frameworks */,
+				D40B0F961C3DD21E00402432 /* Result.framework in Frameworks */,
+				D40B0F971C3DD21E00402432 /* RxBlocking.framework in Frameworks */,
+				D40B0F981C3DD21E00402432 /* RxCocoa.framework in Frameworks */,
+				D40B0F991C3DD21E00402432 /* RxMoya.framework in Frameworks */,
+				D40B0F9A1C3DD21E00402432 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,10 +225,18 @@
 		8E5975E2F7A1042AA365A1E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D45CCB641C3324E900DF6542 /* Alamofire.framework */,
-				D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */,
-				D45CCB661C3324E900DF6542 /* Result.framework */,
-				DC721C4E5C4455DDD3CD04EF /* Pods.framework */,
+				D40B0F841C3DD21E00402432 /* Alamofire.framework */,
+				D40B0F851C3DD21E00402432 /* Moya.framework */,
+				D40B0F861C3DD21E00402432 /* ReactiveCocoa.framework */,
+				D40B0F871C3DD21E00402432 /* ReactiveMoya.framework */,
+				D40B0F881C3DD21E00402432 /* Realm.framework */,
+				D40B0F891C3DD21E00402432 /* RealmSwift.framework */,
+				D40B0F8A1C3DD21E00402432 /* Result.framework */,
+				D40B0F8B1C3DD21E00402432 /* RxBlocking.framework */,
+				D40B0F8C1C3DD21E00402432 /* RxCocoa.framework */,
+				D40B0F8D1C3DD21E00402432 /* RxMoya.framework */,
+				D40B0F8E1C3DD21E00402432 /* RxSwift.framework */,
+				D40B0F8F1C3DD21E00402432 /* RxTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,11 +244,22 @@
 		D45CCB171C33131500DF6542 = {
 			isa = PBXGroup;
 			children = (
+				D40B0F9E1C3DD4C000402432 /* Alamofire.framework.dSYM */,
+				D40B0F9F1C3DD4C000402432 /* Moya.framework.dSYM */,
+				D40B0FA01C3DD4C000402432 /* ReactiveCocoa.framework.dSYM */,
+				D40B0FA11C3DD4C000402432 /* ReactiveMoya.framework.dSYM */,
+				D40B0FA21C3DD4C000402432 /* Realm.framework.dSYM */,
+				D40B0FA31C3DD4C000402432 /* RealmSwift.framework.dSYM */,
+				D40B0FA41C3DD4C000402432 /* Result.framework.dSYM */,
+				D40B0FA51C3DD4C000402432 /* RxBlocking.framework.dSYM */,
+				D40B0FA61C3DD4C000402432 /* RxCocoa.framework.dSYM */,
+				D40B0FA71C3DD4C000402432 /* RxMoya.framework.dSYM */,
+				D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */,
+				D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */,
 				D45CCB221C33131500DF6542 /* GoFundMeNative */,
 				D45CCB371C33131500DF6542 /* GoFundMeNativeTests */,
 				D45CCB421C33131500DF6542 /* GoFundMeNativeUITests */,
 				D45CCB211C33131500DF6542 /* Products */,
-				E6F16F476C65D8468ECD5DC9 /* Pods */,
 				8E5975E2F7A1042AA365A1E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -261,16 +347,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		E6F16F476C65D8468ECD5DC9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A5F4EB0B67730CC9617EEF46 /* Pods.debug.xcconfig */,
-				84A2A82F05CCE71A5C8421F1 /* Pods.release app store.xcconfig */,
-				6BA0AE71A9CA4927F0CA60F1 /* Pods.release ad hoc.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,12 +354,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D45CCB481C33131500DF6542 /* Build configuration list for PBXNativeTarget "GoFundMeNative" */;
 			buildPhases = (
-				86875B879CEEC7CEA45D8F77 /* Check Pods Manifest.lock */,
 				D45CCB1C1C33131500DF6542 /* Sources */,
 				D45CCB1D1C33131500DF6542 /* Frameworks */,
 				D45CCB1E1C33131500DF6542 /* Resources */,
-				8427A03F613E07CC94A2F7E9 /* Embed Pods Frameworks */,
-				DC0CFEF55F87E375E6436BB2 /* Copy Pods Resources */,
+				D40B0F9C1C3DD25300402432 /* Carthage */,
+				D40B0F9D1C3DD4A800402432 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -402,50 +477,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8427A03F613E07CC94A2F7E9 /* Embed Pods Frameworks */ = {
+		D40B0F9C1C3DD25300402432 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RXSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTests.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		86875B879CEEC7CEA45D8F77 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DC0CFEF55F87E375E6436BB2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -589,12 +645,12 @@
 		};
 		D45CCB491C33131500DF6542 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5F4EB0B67730CC9617EEF46 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GoFundMeNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,6 +663,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = GoFundMeNativeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeTests;
@@ -673,12 +730,12 @@
 		};
 		D45CCB561C33167F00DF6542 /* Release Ad Hoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BA0AE71A9CA4927F0CA60F1 /* Pods.release ad hoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GoFundMeNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -691,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = GoFundMeNativeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeTests;
@@ -757,12 +815,12 @@
 		};
 		D45CCB5A1C33168800DF6542 /* Release App Store */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A2A82F05CCE71A5C8421F1 /* Pods.release app store.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GoFundMeNative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -775,6 +833,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = GoFundMeNativeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GoFundMe.GoFundMeNativeTests;
