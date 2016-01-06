@@ -13,6 +13,7 @@ import Result
 class GFMSignInViewModel: GFMViewModel {
     
     private let signInModel: GFMSignInModel
+    private var hasTappedSignIn = false
     
     // Inputs
     let email: MutableProperty<String> = MutableProperty("")
@@ -22,10 +23,14 @@ class GFMSignInViewModel: GFMViewModel {
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
+    let hideErrorMessage: MutableProperty<Bool> = MutableProperty(true)
+    let emailTextFieldTextColor: MutableProperty<UIColor> = MutableProperty(UIColor.lightGrayColor())
+    let passwordTextFieldTextColor: MutableProperty<UIColor> = MutableProperty(UIColor.lightGrayColor())
     
     // Actions
     lazy var signInTapAction: Action<Void, Bool, NoError> = { [unowned self] in
         return Action ({ _ in
+            self.hasTappedSignIn = true
             return self.executeSignIn(self.email.value, password: self.password.value)
         })
     }()
@@ -39,19 +44,36 @@ class GFMSignInViewModel: GFMViewModel {
         isValidEmail <~ email.producer.map(checkValidEmail)
         isValidPassword <~ password.producer.map(checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
-            .map { $0 && $1 }
+            .map { $0 && $1 && !self.signInTapAction.executing.value }
+        emailTextFieldTextColor <~ isValidEmail.producer.map {
+            if (!self.hasTappedSignIn) {
+                return UIColor.blackColor()
+            } else {
+                return $0 && self.hasTappedSignIn ? UIColor.blackColor() : UIColor.redColor()
+            }
+        }
+        passwordTextFieldTextColor <~ isValidPassword.producer.map {
+            if (!self.hasTappedSignIn) {
+                return UIColor.blackColor()
+            } else {
+                return $0 && self.hasTappedSignIn ? UIColor.blackColor() : UIColor.redColor()
+            }
+        }
     
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
         
         self.signInTapAction.events
             .observeOn(UIScheduler())
-            .observeNext({ event in
+            .observeNext({ [unowned self] event in
                 switch event {
                 case .Next:
-                    NSLog("\(event.value!)")
-                    if (event.value!) {
-                        let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
-                        self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+                    if let isSuccessfullyLoggedIn = event.value as Bool? {
+                        NSLog("\(isSuccessfullyLoggedIn)")
+                        if (event.value!) {
+                            let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
+                            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+                        }
+                        self.hideErrorMessage.value = isSuccessfullyLoggedIn
                     }
                 case .Completed:
                     NSLog("finished")
@@ -67,10 +89,15 @@ class GFMSignInViewModel: GFMViewModel {
     // MARK: - Mutable Property Bindings
     
     func checkValidEmail(emailInput: String) -> Bool {
-        return emailInput.characters.count > 3
+        // TODO: get email validation code from server
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(emailInput)
     }
     
     func checkValidPassword(passwordInput: String) -> Bool {
+        // TODO: get password validation code from server
         return passwordInput.characters.count > 3
     }
     

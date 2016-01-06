@@ -14,7 +14,7 @@ class GFMSignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var loadingActivityIndicatorView: UIActivityIndicatorView!
-    
+    @IBOutlet weak var errorLabel: UILabel!
     var signInViewModel: GFMSignInViewModel?
     
     override func viewDidLoad() {
@@ -31,22 +31,20 @@ class GFMSignInViewController: UIViewController {
         }
         
         viewModel.email <~ emailTextField.rac_textSignalProducer()
-        viewModel.isValidEmail.producer.startWithNext { isValid in
-            if (isValid) {
-                print("email is valid")
-            }
+        viewModel.emailTextFieldTextColor.producer.startWithNext { color in
+            self.emailTextField.textColor = color
         }
         
         viewModel.password <~ passwordTextField.rac_textSignalProducer()
-        viewModel.isValidPassword.producer.startWithNext { isValid in
-            if (isValid) {
-                print("password is valid")
-            }
+        viewModel.passwordTextFieldTextColor.producer.startWithNext { color in
+            self.passwordTextField.textColor = color
         }
-        
+
         viewModel.enableSignInButton.producer.startWithNext { isEnabled in
             self.signInButton.enabled = isEnabled
         }
+        
+        errorLabel.rac_hidden <~ viewModel.hideErrorMessage
         
         loadingActivityIndicatorView.rac_hidden <~ viewModel.signInTapAction.executing.producer.map({ !$0 })
         signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)

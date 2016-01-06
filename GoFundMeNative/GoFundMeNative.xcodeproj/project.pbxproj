@@ -21,12 +21,15 @@
 		2C8493B11C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
 		2C8493B21C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
 		C9A558A3C3639E50C526242E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC721C4E5C4455DDD3CD04EF /* Pods.framework */; };
-		D40B0F7D1C3DB91400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
+		D40B0F7F1C3DC53F00402432 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
+		D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
+		D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
+		D40B0F821C3DC58700402432 /* GFMAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */; };
+		D40B0F831C3DC58900402432 /* GFMSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E5C1C3354F1000AB6AF /* GFMSignInViewController.swift */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
 		D45CCB2E1C33131500DF6542 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2C1C33131500DF6542 /* LaunchScreen.storyboard */; };
-		D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */; };
 		D45CCB441C33131500DF6542 /* GoFundMeNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */; };
 		D45CCB671C3324E900DF6542 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB641C3324E900DF6542 /* Alamofire.framework */; };
 		D45CCB681C3324E900DF6542 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45CCB651C3324E900DF6542 /* ReactiveCocoa.framework */; };
@@ -34,9 +37,7 @@
 		D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */; };
 		D4EA8F3E1C3352EA00F66391 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E581C3354A8000AB6AF /* GFMSignInViewModel.swift */; };
-		D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
 		D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E5E1C335504000AB6AF /* GFMSignInModel.swift */; };
-		D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
 		D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F431C33584600F66391 /* GoFundMeAPI.swift */; };
 		D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA8F471C34A77000F66391 /* GFMNetworkService.swift */; };
@@ -87,7 +88,6 @@
 		D45CCB2D1C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D45CCB2F1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45CCB341C33131500DF6542 /* GoFundMeNativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeTests.swift; sourceTree = "<group>"; };
 		D45CCB3A1C33131500DF6542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45CCB3F1C33131500DF6542 /* GoFundMeNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoFundMeNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB431C33131500DF6542 /* GoFundMeNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoFundMeNativeUITests.swift; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 		D45CCB371C33131500DF6542 /* GoFundMeNativeTests */ = {
 			isa = PBXGroup;
 			children = (
-				D45CCB381C33131500DF6542 /* GoFundMeNativeTests.swift */,
 				D45CCB3A1C33131500DF6542 /* Info.plist */,
 				D4EA8F3C1C3352B400F66391 /* GFMSignInTestCase.swift */,
 				D4EA8F521C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift */,
@@ -478,22 +477,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D40B0F7D1C3DB91400402432 /* GFMNavigationService.swift in Sources */,
 				2C8493B21C3C483F000B6943 /* RAC.swift in Sources */,
+				D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */,
 				2C8493AF1C3C4831000B6943 /* GFMConstants.swift in Sources */,
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,
 				D4EA8F3D1C3352B400F66391 /* GFMSignInTestCase.swift in Sources */,
+				D40B0F7F1C3DC53F00402432 /* GFMServices.swift in Sources */,
 				D4EA8F531C3B2D0400F66391 /* GFMPersistenceServiceTestCase.swift in Sources */,
 				D4EA8F491C34B0A600F66391 /* GFMNetworkService.swift in Sources */,
-				D4EA8F421C33563600F66391 /* GFMServices.swift in Sources */,
 				D4EA8F451C34577400F66391 /* GoFundMeAPI.swift in Sources */,
-				D4EA8F401C33560200F66391 /* GFMViewModel.swift in Sources */,
+				D40B0F831C3DC58900402432 /* GFMSignInViewController.swift in Sources */,
+				D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */,
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
-				D45CCB391C33131500DF6542 /* GoFundMeNativeTests.swift in Sources */,
 				D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */,
 				2C8493A71C3B3E8F000B6943 /* GFMAccountViewModel.swift in Sources */,
 				D4EA8F3E1C3352EA00F66391 /* (null) in Sources */,
 				D4EA8F511C3B149000F66391 /* GFMPersistenceService.swift in Sources */,
+				D40B0F821C3DC58700402432 /* GFMAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
