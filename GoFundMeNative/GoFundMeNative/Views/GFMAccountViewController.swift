@@ -18,7 +18,7 @@ class GFMAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = Constants.PageTitles.AccountPageTitle
+        title = Constants.PageTitles.AccountPageTitle
         
         setupViewModelBindings()
         

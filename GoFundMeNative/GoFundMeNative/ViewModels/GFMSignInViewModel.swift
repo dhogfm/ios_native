@@ -40,8 +40,8 @@ class GFMSignInViewModel: GFMViewModel {
         
         super.init(services: services)
         
-        isValidEmail <~ self.email.producer.map(self.checkValidEmail)
-        isValidPassword <~ self.password.producer.map(self.checkValidPassword)
+        isValidEmail <~ email.producer.map(checkValidEmail)
+        isValidPassword <~ password.producer.map(checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 }
     
@@ -61,8 +61,8 @@ class GFMSignInViewModel: GFMViewModel {
     // MARK: - Model Actions
 
     func executeSignIn() {
-        self.isSignInExecuting.value = true
-        self.services.signIn(self.email.value, password: self.password.value) { [unowned self]
+        isSignInExecuting.value = true
+        services.signIn(email.value, password: password.value) { [unowned self]
             (tokens) in
             self.isSignInExecuting.value = false
             

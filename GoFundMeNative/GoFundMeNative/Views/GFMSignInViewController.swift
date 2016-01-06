@@ -19,13 +19,13 @@ class GFMSignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViewModelBindings()
+        setupViewModelBindings()
     }
     
     // MARK: - View Model Bindings
     
     func setupViewModelBindings() {
-        guard let viewModel = self.signInViewModel else {
+        guard let viewModel = signInViewModel else {
             print(Constants.Errors.ViewModelCreationError)
             return
         }

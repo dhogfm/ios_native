@@ -22,7 +22,7 @@ class GFMNavigationService: NSObject {
     func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
         switch pageType {
         case .SignIn:
-            if let signInViewController = self.fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
+            if let signInViewController = fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
                 
                 if viewModel.isKindOfClass(GFMSignInViewModel) {
                     signInViewController.signInViewModel = viewModel as? GFMSignInViewModel
@@ -31,7 +31,7 @@ class GFMNavigationService: NSObject {
                 navigationController?.pushViewController(signInViewController, animated: animated)
             }
         case .Account:
-            if let accountViewController = self.fetchViewControllerWithIdentifier(PageType.Account.rawValue) as? GFMAccountViewController {
+            if let accountViewController = fetchViewControllerWithIdentifier(PageType.Account.rawValue) as? GFMAccountViewController {
                 
                 if viewModel.isKindOfClass(GFMAccountViewModel) {
                     accountViewController.accountViewModel = viewModel as? GFMAccountViewModel
@@ -43,7 +43,7 @@ class GFMNavigationService: NSObject {
     }
     
     func popToSignIn(services: GFMServices, viewModel: GFMSignInViewModel) {
-        if let signInViewController = self.fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
+        if let signInViewController = fetchViewControllerWithIdentifier(PageType.SignIn.rawValue) as? GFMSignInViewController {
             
             if viewModel.isKindOfClass(GFMSignInViewModel) {
                 signInViewController.signInViewModel = viewModel

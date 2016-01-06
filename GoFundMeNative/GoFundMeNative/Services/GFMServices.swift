@@ -30,7 +30,7 @@ class GFMServices: NSObject {
     
     func initializeApp() -> Bool {
         var isLoggedIn = false
-        if let userObject = self.loadStoredUser() {
+        if let userObject = loadStoredUser() {
             gfm_csrf = userObject.csrf
             gfm_passport = userObject.passport
             isLoggedIn = true
@@ -98,10 +98,10 @@ class GFMServices: NSObject {
     // MARK: - Navigation Service
     
     func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
-        self.navigationService?.navigateToPage(pageType, viewModel: viewModel, animated: animated)
+        navigationService?.navigateToPage(pageType, viewModel: viewModel, animated: animated)
     }
     
     func popToSignIn(viewModel: GFMSignInViewModel) {
-        self.navigationService?.popToSignIn(self, viewModel: viewModel)
+        navigationService?.popToSignIn(self, viewModel: viewModel)
     }
 }
