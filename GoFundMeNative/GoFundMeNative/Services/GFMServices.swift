@@ -97,6 +97,10 @@ class GFMServices: NSObject {
     
     // MARK: - Navigation Service
     
+    func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool, popCurrent: Bool) {
+        navigationService?.navigateToPage(pageType, viewModel: viewModel, animated: animated, popCurrent: popCurrent)
+    }
+    
     func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
         navigationService?.navigateToPage(pageType, viewModel: viewModel, animated: animated)
     }

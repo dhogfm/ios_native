@@ -19,6 +19,11 @@ class GFMNavigationService: NSObject {
     
     // MARK: - Navigation Methods
     
+    func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool, popCurrent: Bool) {
+        self.navigationController?.viewControllers.removeAtIndex((self.navigationController?.viewControllers.count)! - 1)
+        navigateToPage(pageType, viewModel: viewModel, animated: animated)
+    }
+    
     func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool) {
         switch pageType {
         case .SignIn:

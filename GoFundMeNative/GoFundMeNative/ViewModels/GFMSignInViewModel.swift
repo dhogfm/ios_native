@@ -67,7 +67,7 @@ class GFMSignInViewModel: GFMViewModel {
             
             let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
             
-            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true, popCurrent: true)
         }
         return SignalProducer.empty
     }
