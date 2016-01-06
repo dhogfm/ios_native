@@ -30,16 +30,14 @@ class GFMSignInViewController: UIViewController {
             return
         }
         
-        let emailProducer = emailTextField.rac_textSignalProducer()
-        viewModel.email <~ emailProducer
+        viewModel.email <~ emailTextField.rac_textSignalProducer()
         viewModel.isValidEmail.producer.startWithNext { isValid in
             if (isValid) {
                 print("email is valid")
             }
         }
         
-        let passwordProducer = passwordTextField.rac_textSignalProducer()
-        viewModel.password <~ passwordProducer
+        viewModel.password <~ passwordTextField.rac_textSignalProducer()
         viewModel.isValidPassword.producer.startWithNext { isValid in
             if (isValid) {
                 print("password is valid")

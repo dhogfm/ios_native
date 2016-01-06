@@ -22,7 +22,7 @@ class GFMAccountViewController: UIViewController {
         
         setupViewModelBindings()
         
-        DynamicProperty(object: userIDLabel, keyPath: "text") <~ (accountViewModel?.userObject.userId.producer.map({ $0 as AnyObject? }))!
+        DynamicProperty(object: userIDLabel, keyPath: "text") <~ (accountViewModel?.userId.producer.map({ $0 as AnyObject? }))!
     }
     
     // MARK: - View Model Bindings

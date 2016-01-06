@@ -19,16 +19,15 @@ class GFMSignInViewModel: GFMViewModel {
     let password: MutableProperty<String> = MutableProperty("")
 
     // Outputs
-    var isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
+    let isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
     // Actions
     lazy var signInTapAction: Action<Void, Void, NSError> = { [unowned self] in
-        return Action( { _ in
-            self.executeSignIn()
-            return SignalProducer.empty
+        return Action(enabledIf: self.enableSignInButton, { _ in
+            return self.executeSignIn()
         })
     }()
     
@@ -60,9 +59,9 @@ class GFMSignInViewModel: GFMViewModel {
     
     // MARK: - Model Actions
 
-    func executeSignIn() {
-        isSignInExecuting.value = true
-        services.signIn(email.value, password: password.value) { [unowned self]
+    func executeSignIn() -> SignalProducer<Void, NSError>{
+        self.isSignInExecuting.value = true
+        self.services.signIn(self.email.value, password: self.password.value) { [unowned self]
             (tokens) in
             self.isSignInExecuting.value = false
             
@@ -70,5 +69,6 @@ class GFMSignInViewModel: GFMViewModel {
             
             self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
         }
+        return SignalProducer.empty
     }
 }
