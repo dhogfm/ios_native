@@ -52,22 +52,24 @@ class GFMServices: NSObject {
         return isLoggedIn
     }
 
-    func signIn(email: String, password: String, completed: SignInSuccessBlock) {
+    func signIn(email: String, password: String, completed: BoolParameterBlock) {
         networkService.request(.SignIn(email, password), completion: { [unowned self]
             (success, responseDict, error) in
-            var signInTokens : GFMSignInTokens?
+            var isValidLogin = false
             if (success) {
                 let tokens = GFMSignInTokens(responseDict: responseDict)
                 self.persistenceService.storeAppTokens(tokens)
-                signInTokens = tokens
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setObject(tokens.userId, forKey: defaultsUserIdKey)
                 defaults.synchronize()
                 
-                self.userState.userId.value = tokens.userId
+                if (tokens.userId.characters.count > 0) {
+                    self.userState.userId.value = tokens.userId
+                    isValidLogin = true
+                }
             }
-            completed(tokens: signInTokens)
+            completed(isTrue: isValidLogin)
         })
     }
     
@@ -84,11 +86,12 @@ class GFMServices: NSObject {
         let defaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.valueForKey(defaultsUserIdKey)
         if let uid = userId as? String {
-            userState.userId.value = uid
-            return persistenceService.storedUserObject(uid)
-        } else {
-            return nil
+            if uid.characters.count > 0 {
+                userState.userId.value = uid
+                return persistenceService.storedUserObject(uid)
+            }
         }
+        return nil
     }
     
     private func handleIsLoggedIn(isLoggedIn: Bool) {

@@ -21,6 +21,7 @@
 		2C8493B11C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
 		2C8493B21C3C483F000B6943 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8493B01C3C483F000B6943 /* RAC.swift */; };
 		C9A558A3C3639E50C526242E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC721C4E5C4455DDD3CD04EF /* Pods.framework */; };
+		D40B0F7D1C3DB91400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
@@ -477,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40B0F7D1C3DB91400402432 /* GFMNavigationService.swift in Sources */,
 				2C8493B21C3C483F000B6943 /* RAC.swift in Sources */,
 				2C8493AF1C3C4831000B6943 /* GFMConstants.swift in Sources */,
 				D4EA8F411C33560600F66391 /* GFMSignInModel.swift in Sources */,

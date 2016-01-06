@@ -19,20 +19,17 @@ class GFMSignInViewModel: GFMViewModel {
     let password: MutableProperty<String> = MutableProperty("")
 
     // Outputs
-    let isSignInExecuting: MutableProperty<Bool> = MutableProperty(false)
     let isValidEmail: MutableProperty<Bool> = MutableProperty(false)
     let isValidPassword: MutableProperty<Bool> = MutableProperty(false)
     let enableSignInButton: MutableProperty<Bool> = MutableProperty(false)
     
     // Actions
-    lazy var signInTapAction: Action<Void, Void, NSError> = { [unowned self] in
-        return Action(enabledIf: self.enableSignInButton, { _ in
-            return self.executeSignIn()
+    lazy var signInTapAction: Action<Void, Bool, NoError> = { [unowned self] in
+        return Action ({ _ in
+            return self.executeSignIn(self.email.value, password: self.password.value)
         })
     }()
-    
     var signInCocoaAction: CocoaAction!
-    
     
     init(model: GFMSignInModel, services: GFMServices) {
         signInModel = model
@@ -45,6 +42,26 @@ class GFMSignInViewModel: GFMViewModel {
             .map { $0 && $1 }
     
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
+        
+        self.signInTapAction.events
+            .observeOn(UIScheduler())
+            .observeNext({ event in
+                switch event {
+                case .Next:
+                    NSLog("\(event.value!)")
+                    if (event.value!) {
+                        let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
+                        self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+                    }
+                case .Completed:
+                    NSLog("finished")
+                case .Interrupted:
+                    NSLog("Interrupted")
+                case .Failed:
+                    NSLog("Failed")
+                    break
+                }
+        })
     }
     
     // MARK: - Mutable Property Bindings
@@ -59,16 +76,13 @@ class GFMSignInViewModel: GFMViewModel {
     
     // MARK: - Model Actions
 
-    func executeSignIn() -> SignalProducer<Void, NSError>{
-        self.isSignInExecuting.value = true
-        self.services.signIn(self.email.value, password: self.password.value) { [unowned self]
-            (tokens) in
-            self.isSignInExecuting.value = false
-            
-            let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
-            
-            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+    func executeSignIn(email: String, password: String) -> SignalProducer<Bool, NoError>{
+        let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
+            self.services.signIn(email, password: password) { (isSignedIn) in
+                observer.sendNext(isSignedIn)
+                observer.sendCompleted()
+            }
         }
-        return SignalProducer.empty
+        return producer
     }
 }

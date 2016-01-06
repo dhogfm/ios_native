@@ -48,7 +48,7 @@ class GFMSignInViewController: UIViewController {
             self.signInButton.enabled = isEnabled
         }
         
-        loadingActivityIndicatorView.rac_hidden <~ viewModel.isSignInExecuting.producer.map({ !$0 })
+        loadingActivityIndicatorView.rac_hidden <~ viewModel.signInTapAction.executing.producer.map({ !$0 })
         signInButton.addTarget(viewModel.signInCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
     }
 }
