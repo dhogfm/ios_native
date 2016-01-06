@@ -167,7 +167,7 @@
                     </view>
                     <connections>
                         <outlet property="signOutButton" destination="Nmt-d7-kED" id="ta4-kz-ern"/>
-                        <outlet property="userIDLabel" destination="YcC-MV-dKa" id="Syo-WF-3sK"/>
+                        <outlet property="userIdLabel" destination="YcC-MV-dKa" id="KLL-T0-4z2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNK-rN-53l" userLabel="First Responder" sceneMemberID="firstResponder"/>

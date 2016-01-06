@@ -11,11 +11,10 @@ import ReactiveCocoa
 import Result
 
 class GFMAccountViewModel: GFMViewModel {
-    
+    private let userObject: UserState
     // Inputs
     
     // Outputs
-    var userId: MutableProperty<String> = MutableProperty("")
     
     // Actions
     lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
@@ -24,14 +23,10 @@ class GFMAccountViewModel: GFMViewModel {
         })
     }()
     var signOutCocoaAction: CocoaAction!
-
-    private let userObject: UserState
     
     init(user: UserState, services: GFMServices) {
         userObject = user
         super.init(services: services)
-        
-        userId = userObject.userId
         
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
     }
@@ -44,5 +39,11 @@ class GFMAccountViewModel: GFMViewModel {
 
         services.popToSignIn(signInViewModel)
         return SignalProducer.empty
+    }
+    
+    // MARK: - Dynamic Properties
+    
+    func attachUserIdDynamicProperty(dynamicProperty: DynamicProperty) {
+        dynamicProperty <~ (userObject.userId.producer.map({ $0 as AnyObject? }))
     }
 }
