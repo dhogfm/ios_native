@@ -20,7 +20,10 @@ class GFMNavigationService: NSObject {
     // MARK: - Navigation Methods
     
     func navigateToPage(pageType: PageType, viewModel: GFMViewModel, animated: Bool, popCurrent: Bool) {
-        self.navigationController?.viewControllers.removeAtIndex((self.navigationController?.viewControllers.count)! - 1)
+        if (popCurrent && self.navigationController?.viewControllers.count > 0) {
+            self.navigationController?.viewControllers.removeAtIndex((self.navigationController?.viewControllers.count)! - 1)
+        }
+        
         navigateToPage(pageType, viewModel: viewModel, animated: animated)
     }
     
