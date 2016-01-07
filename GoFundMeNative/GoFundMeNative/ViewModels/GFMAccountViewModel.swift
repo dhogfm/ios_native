@@ -39,7 +39,7 @@ class GFMAccountViewModel: GFMViewModel {
                             let signInModel = GFMSignInModel()
                             let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
                             
-                            services.popToSignIn(signInViewModel)
+                            self.services.popToSignIn(signInViewModel)
                         }
                     }
                 case .Completed:
