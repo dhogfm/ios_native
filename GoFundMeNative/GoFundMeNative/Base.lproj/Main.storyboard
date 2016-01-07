@@ -187,5 +187,38 @@
             </objects>
             <point key="canvasLocation" x="1031" y="363"/>
         </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="Kpn-9j-eE1">
+            <objects>
+                <viewController id="8ke-Qn-QeM" customClass="GFMSideMenuViewController" customModule="GoFundMeNative" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nyk-zi-Hjh"/>
+                        <viewControllerLayoutGuide type="bottom" id="vys-fU-8tb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RoL-bI-xlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-Mw-6Rr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="width" secondItem="RoL-bI-xlJ" secondAttribute="width" id="93S-Le-h8m"/>
+                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="height" secondItem="RoL-bI-xlJ" secondAttribute="height" id="Fxj-cZ-Fhl"/>
+                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="top" secondItem="nyk-zi-Hjh" secondAttribute="bottom" constant="-20" id="Mv1-86-y4l"/>
+                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="leading" secondItem="RoL-bI-xlJ" secondAttribute="leadingMargin" constant="-20" id="vX7-EE-hDt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="WRI-Mw-6Rr" id="A5s-yr-sda"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iPH-UO-8gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="1100"/>
+        </scene>
     </scenes>
 </document>

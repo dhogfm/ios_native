@@ -48,6 +48,7 @@
 		D40B0FB31C3DD4C000402432 /* RxMoya.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA71C3DD4C000402432 /* RxMoya.framework.dSYM */; };
 		D40B0FB41C3DD4C000402432 /* RxSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */; };
 		D40B0FB51C3DD4C000402432 /* RxTests.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */; };
+		D40B0FB81C3EE77600402432 /* GFMSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
@@ -145,6 +146,7 @@
 		D40B0FA71C3DD4C000402432 /* RxMoya.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxMoya.framework.dSYM; path = Carthage/Build/iOS/RxMoya.framework.dSYM; sourceTree = "<group>"; };
 		D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTests.framework.dSYM; path = Carthage/Build/iOS/RxTests.framework.dSYM; sourceTree = "<group>"; };
+		D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSideMenuViewController.swift; sourceTree = "<group>"; };
 		D45CCB201C33131500DF6542 /* GoFundMeNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFundMeNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB231C33131500DF6542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D45CCB281C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */,
 				2C5B9E5C1C3354F1000AB6AF /* GFMSignInViewController.swift */,
 				D45CCB271C33131500DF6542 /* Main.storyboard */,
+				D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */,
 				2C0C11CF1C3B27810097A868 /* GFMAccountViewController.swift in Sources */,
 				2C8493AE1C3C4831000B6943 /* GFMConstants.swift in Sources */,
+				D40B0FB81C3EE77600402432 /* GFMSideMenuViewController.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
 				D4EA8F4B1C3AE8EA00F66391 /* GFMResponseParser.swift in Sources */,
 				D4EA8F441C33584600F66391 /* GoFundMeAPI.swift in Sources */,
