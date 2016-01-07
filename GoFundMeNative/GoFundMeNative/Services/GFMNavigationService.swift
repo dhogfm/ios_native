@@ -44,8 +44,9 @@ class GFMNavigationService: NSObject {
                 if viewModel.isKindOfClass(GFMAccountViewModel) {
                     accountViewController.accountViewModel = viewModel as? GFMAccountViewModel
                 }
-                
+                accountViewController.navigationItem.hidesBackButton = true
                 navigationController?.pushViewController(accountViewController, animated: animated)
+                
             }
         }
     }

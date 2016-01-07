@@ -59,6 +59,8 @@ class GFMServices: NSObject {
             if (success) {
                 let tokens = GFMSignInTokens(responseDict: responseDict)
                 self.persistenceService.storeAppTokens(tokens)
+                gfm_csrf = tokens.csrf
+                gfm_passport = tokens.passport
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setObject(tokens.userId, forKey: defaultsUserIdKey)
@@ -76,6 +78,12 @@ class GFMServices: NSObject {
     func signOut(completed: BoolParameterBlock) {
         networkService.request(.SignOut, completion: {
             (success, responseDict, error) in
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
+            
+            gfm_csrf = ""
+            gfm_passport = ""
             completed(isTrue: success)
         })
     }
