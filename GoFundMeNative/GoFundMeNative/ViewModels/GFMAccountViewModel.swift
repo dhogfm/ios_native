@@ -15,9 +15,9 @@ class GFMAccountViewModel: GFMViewModel {
     // Inputs
     
     // Outputs
-    
+
     // Actions
-    lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
+    lazy var signOutTapAction: Action<Void, Bool, NoError> = { [unowned self] in
         return Action( { _ in
             return self.executeSignOut()
         })
@@ -29,16 +29,40 @@ class GFMAccountViewModel: GFMViewModel {
         super.init(services: services)
         
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
+        self.signOutTapAction.events
+            .observeOn(UIScheduler())
+            .observeNext({ [unowned self] event in
+                switch event {
+                case .Next:
+                    if let isLoggedOut = event.value as Bool? {
+                        if (isLoggedOut) {
+                            let signInModel = GFMSignInModel()
+                            let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+                            
+                            services.popToSignIn(signInViewModel)
+                        }
+                    }
+                case .Completed:
+                    NSLog("finished")
+                case .Interrupted:
+                    NSLog("Interrupted")
+                case .Failed:
+                    NSLog("Failed")
+                    break
+                }
+            })
     }
     
     // MARK: - Model Actions
     
-    func executeSignOut() -> SignalProducer<Void, NSError>  {
-        let signInModel = GFMSignInModel()
-        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
-
-        services.popToSignIn(signInViewModel)
-        return SignalProducer.empty
+    func executeSignOut() -> SignalProducer<Bool, NoError>  {
+        let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
+            self.services.signOut() { (isSignedIn) in
+                observer.sendNext(isSignedIn)
+                observer.sendCompleted()
+            }
+        }
+        return producer
     }
     
     // MARK: - Dynamic Properties

@@ -49,7 +49,6 @@ class GFMSignInViewModel: GFMViewModel {
         passwordTextFieldTextColor <~ isValidPassword.producer.map(validatedTextColor)
     
         signInCocoaAction = CocoaAction(signInTapAction, input: ())
-        
         self.signInTapAction.events
             .observeOn(UIScheduler())
             .observeNext({ [unowned self] event in
