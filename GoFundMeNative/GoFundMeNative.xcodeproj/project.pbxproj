@@ -49,6 +49,9 @@
 		D40B0FB41C3DD4C000402432 /* RxSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */; };
 		D40B0FB51C3DD4C000402432 /* RxTests.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */; };
 		D40B0FB81C3EE77600402432 /* GFMSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */; };
+		D40B0FBA1C3EEE3600402432 /* GFMSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B0FB91C3EEE3600402432 /* GFMSideMenuViewModel.swift */; };
+		D40B0FBB1C3EF82200402432 /* GFMSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */; };
+		D40B0FBC1C3EF82700402432 /* GFMSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40B0FB91C3EEE3600402432 /* GFMSideMenuViewModel.swift */; };
 		D45CCB241C33131500DF6542 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45CCB231C33131500DF6542 /* AppDelegate.swift */; };
 		D45CCB291C33131500DF6542 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB271C33131500DF6542 /* Main.storyboard */; };
 		D45CCB2B1C33131500DF6542 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45CCB2A1C33131500DF6542 /* Assets.xcassets */; };
@@ -147,6 +150,7 @@
 		D40B0FA81C3DD4C000402432 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		D40B0FA91C3DD4C000402432 /* RxTests.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTests.framework.dSYM; path = Carthage/Build/iOS/RxTests.framework.dSYM; sourceTree = "<group>"; };
 		D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSideMenuViewController.swift; sourceTree = "<group>"; };
+		D40B0FB91C3EEE3600402432 /* GFMSideMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMSideMenuViewModel.swift; sourceTree = "<group>"; };
 		D45CCB201C33131500DF6542 /* GoFundMeNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoFundMeNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45CCB231C33131500DF6542 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D45CCB281C33131500DF6542 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -317,8 +321,8 @@
 			children = (
 				2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */,
 				2C5B9E5C1C3354F1000AB6AF /* GFMSignInViewController.swift */,
-				D45CCB271C33131500DF6542 /* Main.storyboard */,
 				D40B0FB71C3EE77600402432 /* GFMSideMenuViewController.swift */,
+				D45CCB271C33131500DF6542 /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 				2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */,
 				2C5B9E581C3354A8000AB6AF /* GFMSignInViewModel.swift */,
 				2C8493A51C3B3E8F000B6943 /* GFMAccountViewModel.swift */,
+				D40B0FB91C3EEE3600402432 /* GFMSideMenuViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 				2C5B9E571C33527A000AB6AF /* GFMViewModel.swift in Sources */,
 				D4EA8F481C34A77000F66391 /* GFMNetworkService.swift in Sources */,
 				2C0C11CF1C3B27810097A868 /* GFMAccountViewController.swift in Sources */,
+				D40B0FBA1C3EEE3600402432 /* GFMSideMenuViewModel.swift in Sources */,
 				2C8493AE1C3C4831000B6943 /* GFMConstants.swift in Sources */,
 				D40B0FB81C3EE77600402432 /* GFMSideMenuViewController.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
@@ -550,8 +556,10 @@
 				D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */,
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
 				D4EA8F4E1C3AEB2300F66391 /* GFMSignInTokens.swift in Sources */,
+				D40B0FBB1C3EF82200402432 /* GFMSideMenuViewController.swift in Sources */,
 				2C8493A71C3B3E8F000B6943 /* GFMAccountViewModel.swift in Sources */,
 				D4EA8F3E1C3352EA00F66391 /* (null) in Sources */,
+				D40B0FBC1C3EF82700402432 /* GFMSideMenuViewModel.swift in Sources */,
 				D4EA8F511C3B149000F66391 /* GFMPersistenceService.swift in Sources */,
 				D40B0F821C3DC58700402432 /* GFMAccountViewController.swift in Sources */,
 			);

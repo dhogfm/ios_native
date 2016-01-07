@@ -10,7 +10,7 @@ import Foundation
 
 enum PageType: String {
     case SignIn = "SignInViewController",
-    Account = "AccountViewController"
+    Account = "SideMenuViewController"
 }
 
 struct Constants {
@@ -23,3 +23,6 @@ struct Constants {
         static let ViewModelCreationError = "There was an error creating the view model"
     }
 }
+
+typealias BoolParameterBlock = (isTrue: Bool) -> ()
+typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()

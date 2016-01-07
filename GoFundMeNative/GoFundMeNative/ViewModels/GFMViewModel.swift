@@ -6,7 +6,7 @@
 //  Copyright © 2015 Daniel Ho. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class GFMViewModel: NSObject {
     

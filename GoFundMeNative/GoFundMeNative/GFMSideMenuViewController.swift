@@ -8,30 +8,41 @@
 
 import UIKit
 
-class GFMSideMenuViewController: UIViewController {
+class GFMSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    private let menuCellIdentifier = "SideMenuCell"
 
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: GFMSideMenuViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITableViewDataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return viewModel!.numberOfSections()
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel!.numberOfRowsInSection(section)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(menuCellIdentifier, forIndexPath: indexPath) 
+        cell.textLabel?.text = viewModel!.titleForIndexPath(indexPath)
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        viewModel!.handleSelectRowAtIndexPath(indexPath)
+    }
 
 }

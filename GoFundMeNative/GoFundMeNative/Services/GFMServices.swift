@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import ReactiveCocoa
 
-typealias BoolParameterBlock = (isTrue: Bool) -> ()
-typealias DictionaryParameterBlock = (response: NSDictionary?) -> ()
-typealias SignInSuccessBlock = (tokens: GFMSignInTokens?) -> ()
-
 // What's the best practice on constants?
 let defaultsUserIdKey = "userId"
 
