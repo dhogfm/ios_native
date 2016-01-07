@@ -27,7 +27,12 @@ class GFMAccountViewModel: GFMViewModel {
     init(user: UserState, services: GFMServices) {
         userObject = user
         super.init(services: services)
-        
+        setupModelActions()
+    }
+    
+    // MARK: - Model Actions
+    
+    func setupModelActions() {
         signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
         self.signOutTapAction.events
             .observeOn(UIScheduler())
@@ -37,7 +42,7 @@ class GFMAccountViewModel: GFMViewModel {
                     if let isLoggedOut = event.value as Bool? {
                         if (isLoggedOut) {
                             let signInModel = GFMSignInModel()
-                            let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
+                            let signInViewModel = GFMSignInViewModel(model: signInModel, services: self.services)
                             
                             self.services.popToSignIn(signInViewModel)
                         }
@@ -52,8 +57,6 @@ class GFMAccountViewModel: GFMViewModel {
                 }
             })
     }
-    
-    // MARK: - Model Actions
     
     func executeSignOut() -> SignalProducer<Bool, NoError>  {
         let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
