@@ -15,9 +15,9 @@ class GFMAccountViewModel: GFMViewModel {
     // Inputs
     
     // Outputs
-    
+
     // Actions
-    lazy var signOutTapAction: Action<Void, Void, NSError> = { [unowned self] in
+    lazy var signOutTapAction: Action<Void, Bool, NoError> = { [unowned self] in
         return Action( { _ in
             return self.executeSignOut()
         })
@@ -27,22 +27,45 @@ class GFMAccountViewModel: GFMViewModel {
     init(user: UserState, services: GFMServices) {
         userObject = user
         super.init(services: services)
-        
-        signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
+        setupModelActions()
     }
     
     // MARK: - Model Actions
     
-    func executeSignOut() -> SignalProducer<Void, NSError>  {
-        let signInModel = GFMSignInModel()
-        let signInViewModel = GFMSignInViewModel(model: signInModel, services: services)
-
-        services.signOut() {
-            success in
-        
+    func setupModelActions() {
+        signOutCocoaAction = CocoaAction(signOutTapAction, input: ())
+        self.signOutTapAction.events
+            .observeOn(UIScheduler())
+            .observeNext({ [unowned self] event in
+                switch event {
+                case .Next:
+                    if let isLoggedOut = event.value as Bool? {
+                        if (isLoggedOut) {
+                            let signInModel = GFMSignInModel()
+                            let signInViewModel = GFMSignInViewModel(model: signInModel, services: self.services)
+                            
+                            self.services.popToSignIn(signInViewModel)
+                        }
+                    }
+                case .Completed:
+                    NSLog("finished")
+                case .Interrupted:
+                    NSLog("Interrupted")
+                case .Failed:
+                    NSLog("Failed")
+                    break
+                }
+            })
+    }
+    
+    func executeSignOut() -> SignalProducer<Bool, NoError>  {
+        let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
+            self.services.signOut() { (isSignedOut) in
+                observer.sendNext(isSignedOut)
+                observer.sendCompleted()
+            }
         }
-        services.popToSignIn(signInViewModel)
-        return SignalProducer.empty
+        return producer
     }
     
     // MARK: - Dynamic Properties

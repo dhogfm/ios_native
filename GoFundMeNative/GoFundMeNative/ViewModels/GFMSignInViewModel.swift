@@ -41,40 +41,20 @@ class GFMSignInViewModel: GFMViewModel {
         
         super.init(services: services)
         
+        setupPropertyBindings()
+        setupModelActions()
+    }
+    
+    // MARK: - Mutable Property Bindings
+    
+    func setupPropertyBindings() {
         isValidEmail <~ email.producer.map(checkValidEmail)
         isValidPassword <~ password.producer.map(checkValidPassword)
         enableSignInButton <~ combineLatest(isValidEmail.producer, isValidPassword.producer)
             .map { $0 && $1 && !self.signInTapAction.executing.value }
         emailTextFieldTextColor <~ isValidEmail.producer.map(validatedTextColor)
         passwordTextFieldTextColor <~ isValidPassword.producer.map(validatedTextColor)
-    
-        signInCocoaAction = CocoaAction(signInTapAction, input: ())
-        
-        self.signInTapAction.events
-            .observeOn(UIScheduler())
-            .observeNext({ [unowned self] event in
-                switch event {
-                case .Next:
-                    if let isSuccessfullyLoggedIn = event.value as Bool? {
-                        NSLog("\(isSuccessfullyLoggedIn)")
-                        if (event.value!) {
-                            let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
-                            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
-                        }
-                        self.hideErrorMessage.value = isSuccessfullyLoggedIn
-                    }
-                case .Completed:
-                    NSLog("finished")
-                case .Interrupted:
-                    NSLog("Interrupted")
-                case .Failed:
-                    NSLog("Failed")
-                    break
-                }
-        })
     }
-    
-    // MARK: - Mutable Property Bindings
     
     func checkValidEmail(emailInput: String) -> Bool {
         // TODO: get email validation code from server
@@ -98,6 +78,32 @@ class GFMSignInViewModel: GFMViewModel {
     }
     
     // MARK: - Model Actions
+    
+    func setupModelActions() {
+        signInCocoaAction = CocoaAction(signInTapAction, input: ())
+        self.signInTapAction.events
+            .observeOn(UIScheduler())
+            .observeNext({ [unowned self] event in
+                switch event {
+                case .Next:
+                    if let isSuccessfullyLoggedIn = event.value as Bool? {
+                        NSLog("\(isSuccessfullyLoggedIn)")
+                        if (event.value!) {
+                            let accountViewModel = GFMAccountViewModel.init(user: self.services.userState, services: self.services)
+                            self.services.navigateToPage(.Account, viewModel: accountViewModel, animated: true)
+                        }
+                        self.hideErrorMessage.value = isSuccessfullyLoggedIn
+                    }
+                case .Completed:
+                    NSLog("finished")
+                case .Interrupted:
+                    NSLog("Interrupted")
+                case .Failed:
+                    NSLog("Failed")
+                    break
+                }
+            })
+    }
 
     func executeSignIn(email: String, password: String) -> SignalProducer<Bool, NoError>{
         let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
