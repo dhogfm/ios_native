@@ -200,14 +200,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-Mw-6Rr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="40" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="cPI-co-Lsy">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cPI-co-Lsy" id="M5v-9Z-JuK">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -218,7 +218,7 @@
                         <constraints>
                             <constraint firstItem="WRI-Mw-6Rr" firstAttribute="width" secondItem="RoL-bI-xlJ" secondAttribute="width" id="93S-Le-h8m"/>
                             <constraint firstItem="WRI-Mw-6Rr" firstAttribute="height" secondItem="RoL-bI-xlJ" secondAttribute="height" id="Fxj-cZ-Fhl"/>
-                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="top" secondItem="nyk-zi-Hjh" secondAttribute="bottom" constant="-20" id="Mv1-86-y4l"/>
+                            <constraint firstItem="WRI-Mw-6Rr" firstAttribute="top" secondItem="nyk-zi-Hjh" secondAttribute="bottom" constant="20" id="Mv1-86-y4l"/>
                             <constraint firstItem="WRI-Mw-6Rr" firstAttribute="leading" secondItem="RoL-bI-xlJ" secondAttribute="leadingMargin" constant="-20" id="vX7-EE-hDt"/>
                         </constraints>
                     </view>

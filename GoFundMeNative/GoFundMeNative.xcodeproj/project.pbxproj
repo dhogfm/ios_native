@@ -515,6 +515,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RXSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTests.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DrawerController.framework",
 			);
 			name = Carthage;
 			outputPaths = (

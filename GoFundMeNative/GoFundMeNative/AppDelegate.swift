@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        services.navigationService = GFMNavigationService(navigationController: navigationController)
         let isLoggedIn = services.initializeApp()
         
         if (isLoggedIn) {
@@ -56,7 +56,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             signInViewController.signInViewModel = signInViewModel
         }
         
-        window.rootViewController = navigationController
+        guard let sideMenuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SideMenuViewController") as? GFMSideMenuViewController else {
+            print("There was a problem fetching the Side Menu View Controller from Storyboard")
+            return false
+        }
+        
+        let signMenuViewModel = GFMSideMenuViewModel(services: services)
+        sideMenuViewController.viewModel = signMenuViewModel
+        
+        let drawerController: DrawerController = DrawerController(centerViewController: navigationController, leftDrawerViewController: sideMenuViewController)
+        
+        services.navigationService = GFMNavigationService(navigationController: navigationController)
+
+        window.rootViewController = drawerController
         window.makeKeyAndVisible()
         
         return true
