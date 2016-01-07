@@ -3,3 +3,5 @@ github "Moya/Moya" == 5.3.0
 github "ReactiveCocoa/ReactiveCocoa" ~> 4.0.0
 
 github "realm/realm-cocoa" == 0.97.0
+
+github "sascha/DrawerController"
