@@ -59,6 +59,7 @@ class GFMNavigationService: NSObject {
             }
             
             navigationController?.viewControllers = [ signInViewController ]
+            navigationController?.evo_drawerController?.closeDrawerAnimated(true, completion: nil)
         }
     }
     
