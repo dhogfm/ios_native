@@ -10,7 +10,7 @@ import Foundation
 
 enum PageType: String {
     case SignIn = "SignInViewController",
-    Account = "SideMenuViewController"
+    Account = "AccountViewController"
 }
 
 struct Constants {
