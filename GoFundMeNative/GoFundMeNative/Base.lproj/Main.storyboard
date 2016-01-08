@@ -152,7 +152,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="UserID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcC-MV-dKa">
-                                        <rect key="frame" x="58" y="0.0" width="53" height="21"/>
+                                        <rect key="frame" x="59" y="0.0" width="53" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="6Fa-cn-kN4"/>
                                         </constraints>
