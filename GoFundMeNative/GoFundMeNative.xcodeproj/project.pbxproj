@@ -24,6 +24,8 @@
 		2CA7B38E1C3EF545000B7A03 /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA7B38C1C3EF545000B7A03 /* DrawerController.framework */; };
 		2CA7B3901C3EF560000B7A03 /* DrawerController.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7B38F1C3EF560000B7A03 /* DrawerController.framework.dSYM */; };
 		2CA7B3911C3EF560000B7A03 /* DrawerController.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7B38F1C3EF560000B7A03 /* DrawerController.framework.dSYM */; };
+		2CA7B3951C3F3DD0000B7A03 /* GFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3941C3F3DD0000B7A03 /* GFMExtensions.swift */; };
+		2CA7B3961C3F3DD0000B7A03 /* GFMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3941C3F3DD0000B7A03 /* GFMExtensions.swift */; };
 		D40B0F7F1C3DC53F00402432 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
 		D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
 		D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
@@ -131,6 +133,7 @@
 		2C8493B01C3C483F000B6943 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAC.swift; path = Utils/RAC.swift; sourceTree = "<group>"; };
 		2CA7B38C1C3EF545000B7A03 /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
 		2CA7B38F1C3EF560000B7A03 /* DrawerController.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DrawerController.framework.dSYM; path = Carthage/Build/iOS/DrawerController.framework.dSYM; sourceTree = "<group>"; };
+		2CA7B3941C3F3DD0000B7A03 /* GFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFMExtensions.swift; sourceTree = "<group>"; };
 		D40B0F841C3DD21E00402432 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D40B0F851C3DD21E00402432 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		D40B0F861C3DD21E00402432 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2C8493AD1C3C4831000B6943 /* GFMConstants.swift */,
+				2CA7B3941C3F3DD0000B7A03 /* GFMExtensions.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -543,6 +547,7 @@
 				D4EA8F501C3B149000F66391 /* GFMPersistenceService.swift in Sources */,
 				2C8493A61C3B3E8F000B6943 /* GFMAccountViewModel.swift in Sources */,
 				2C0C11D11C3B30A00097A868 /* GFMNavigationService.swift in Sources */,
+				2CA7B3951C3F3DD0000B7A03 /* GFMExtensions.swift in Sources */,
 				2C8493B11C3C483F000B6943 /* RAC.swift in Sources */,
 				2C5B9E551C334E6D000AB6AF /* GFMServices.swift in Sources */,
 				2C5B9E591C3354A8000AB6AF /* GFMSignInViewModel.swift in Sources */,
@@ -556,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA7B3961C3F3DD0000B7A03 /* GFMExtensions.swift in Sources */,
 				2C8493B21C3C483F000B6943 /* RAC.swift in Sources */,
 				D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */,
 				2C8493AF1C3C4831000B6943 /* GFMConstants.swift in Sources */,
