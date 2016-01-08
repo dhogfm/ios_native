@@ -38,17 +38,4 @@ class GFMAccountViewController: UIViewController {
         let userIdLabelDynamicProperty = DynamicProperty(object: userIdLabel, keyPath: "text")
         viewModel.attachUserIdDynamicProperty(userIdLabelDynamicProperty)
     }
-    
-    // MARK: Bar Button Items
-    
-    func setupLeftMenuButton() {
-        let leftDrawerButton = DrawerBarButtonItem(target: self, action: "leftDrawerButtonPress:")
-        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated: true)
-    }
-
-    // MARK: - Button Handlers
-    
-    func leftDrawerButtonPress(sender: AnyObject?) {
-        self.evo_drawerController?.toggleDrawerSide(.Left, animated: true, completion: nil)
-    }
 }
