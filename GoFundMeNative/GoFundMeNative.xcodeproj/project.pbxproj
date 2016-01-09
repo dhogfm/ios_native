@@ -42,6 +42,8 @@
 		2CA7B3AF1C405FEE000B7A03 /* GFMResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3AD1C405FEE000B7A03 /* GFMResponseParser.swift */; };
 		2CA7B3B11C406012000B7A03 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3B01C406012000B7A03 /* GFMSignInTokens.swift */; };
 		2CA7B3B21C406012000B7A03 /* GFMSignInTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3B01C406012000B7A03 /* GFMSignInTokens.swift */; };
+		2CA7B3B71C406409000B7A03 /* GFMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3B61C406409000B7A03 /* GFMFeedViewController.swift */; };
+		2CA7B3B81C406409000B7A03 /* GFMFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7B3B61C406409000B7A03 /* GFMFeedViewController.swift */; };
 		D40B0F7F1C3DC53F00402432 /* GFMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E541C334E6D000AB6AF /* GFMServices.swift */; };
 		D40B0F801C3DC54400402432 /* GFMNavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C11D01C3B30A00097A868 /* GFMNavigationService.swift */; };
 		D40B0F811C3DC55100402432 /* GFMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B9E561C33527A000AB6AF /* GFMViewModel.swift */; };
@@ -146,6 +148,7 @@
 		2CA7B3AA1C405FB9000B7A03 /* GFMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMExtensions.swift; path = Helpers/GFMExtensions.swift; sourceTree = "<group>"; };
 		2CA7B3AD1C405FEE000B7A03 /* GFMResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMResponseParser.swift; path = Services/GFMResponseParser.swift; sourceTree = "<group>"; };
 		2CA7B3B01C406012000B7A03 /* GFMSignInTokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMSignInTokens.swift; path = Models/GFMSignInTokens.swift; sourceTree = "<group>"; };
+		2CA7B3B61C406409000B7A03 /* GFMFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFMFeedViewController.swift; path = Views/GFMFeedViewController.swift; sourceTree = "<group>"; };
 		D40B0F841C3DD21E00402432 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D40B0F851C3DD21E00402432 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		D40B0F861C3DD21E00402432 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
@@ -251,6 +254,7 @@
 				2C0C11CE1C3B27810097A868 /* GFMAccountViewController.swift */,
 				2C5B9E5C1C3354F1000AB6AF /* GFMSignInViewController.swift */,
 				2CA7B3A71C405F9A000B7A03 /* GFMSideMenuViewController.swift */,
+				2CA7B3B61C406409000B7A03 /* GFMFeedViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -573,6 +577,7 @@
 				2C8493AE1C3C4831000B6943 /* GFMConstants.swift in Sources */,
 				2CA7B3AE1C405FEE000B7A03 /* GFMResponseParser.swift in Sources */,
 				2C5B9E5F1C335504000AB6AF /* GFMSignInModel.swift in Sources */,
+				2CA7B3B71C406409000B7A03 /* GFMFeedViewController.swift in Sources */,
 				2CA7B39F1C405F12000B7A03 /* GFMPersistenceService.swift in Sources */,
 				2C8493A61C3B3E8F000B6943 /* GFMAccountViewModel.swift in Sources */,
 				2C0C11D11C3B30A00097A868 /* GFMNavigationService.swift in Sources */,
@@ -611,6 +616,7 @@
 				D4EA8F3F1C3355F700F66391 /* GFMSignInViewModel.swift in Sources */,
 				2CA7B3A91C405F9A000B7A03 /* GFMSideMenuViewController.swift in Sources */,
 				2CA7B39E1C405F12000B7A03 /* GFMNetworkService.swift in Sources */,
+				2CA7B3B81C406409000B7A03 /* GFMFeedViewController.swift in Sources */,
 				2C8493A71C3B3E8F000B6943 /* GFMAccountViewModel.swift in Sources */,
 				D4EA8F3E1C3352EA00F66391 /* (null) in Sources */,
 				2CA7B3A61C405F7C000B7A03 /* GFMSideMenuViewModel.swift in Sources */,
