@@ -48,17 +48,20 @@ class GFMSideMenuViewModel: GFMViewModel {
     func onRowTap(rowTapped: SideMenuRow) -> SignalProducer<Bool, NoError> {
         let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
             switch rowTapped {
-            case .ACCOUNT:
+            case .Account:
                 observer.sendCompleted()
-            case .FEED:
+            case .Feed:
+                observer.sendNext(self.services.isSignedIn())
                 observer.sendCompleted()
-            case .SETTINGS:
+            case .Settings:
                 observer.sendCompleted()
-            case .SIGNOUT:
+            case .SignOut:
                 self.services.signOut(){ (isSignedOut) in
                     observer.sendNext(isSignedOut)
                     observer.sendCompleted()
                 }
+            default:
+                observer.sendCompleted()
             }
         }
         return producer
@@ -66,13 +69,26 @@ class GFMSideMenuViewModel: GFMViewModel {
     
     func handleSignalEvent(event: Event<Bool, NoError>, row: SideMenuRow) {
         switch row {
-        case .ACCOUNT:
+        case .Account:
             break
-        case .FEED:
+        case .Feed:
+            switch event {
+            case .Next:
+                if let isSignedIn = event.value as Bool? {
+                    if (isSignedIn) {
+                    }
+                }
+            case .Completed:
+                NSLog("finished")
+            case .Interrupted:
+                NSLog("Interrupted")
+            case .Failed:
+                NSLog("Failed")
+                break
+            }
+        case .Settings:
             break
-        case .SETTINGS:
-            break
-        case .SIGNOUT:
+        case .SignOut:
             switch event {
             case .Next:
                 if let isLoggedOut = event.value as Bool? {
@@ -91,6 +107,8 @@ class GFMSideMenuViewModel: GFMViewModel {
                 NSLog("Failed")
                 break
             }
+        default:
+            break
         }
     }
     

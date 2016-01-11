@@ -9,18 +9,20 @@
 import ReactiveCocoa
 
 enum SideMenuRow: Int {
-    case ACCOUNT, FEED, SETTINGS, SIGNOUT
+    case Account, Feed, Settings, SignIn, SignOut
     
     func menuTitle() -> String {
         switch self {
-        case .ACCOUNT:
-            return "My Account"
-        case .FEED:
-            return "Feed"
-        case .SETTINGS:
-            return "Settings"
-        case .SIGNOUT: 
-            return "Sign Out"
+        case .Account:
+            return PageType.Account.pageTitle()
+        case .Feed:
+            return PageType.Feed.pageTitle()
+        case .Settings:
+            return PageType.Settings.pageTitle()
+        case .SignIn:
+            return  PageType.Settings.pageTitle()
+        case .SignOut:
+            return NSLocalizedString("Sign Out", comment: "Sign Out Side Menu")
         }
     }
     

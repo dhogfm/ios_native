@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" constant="200" id="kbP-d7-tOK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UmE-0I-MR6">
                                 <rect key="frame" x="408" y="161" width="20" height="20"/>

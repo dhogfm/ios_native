@@ -72,7 +72,7 @@ class GFMServices: NSObject {
     }
     
     func signOut(completed: BoolParameterBlock) {
-        networkService.request(.SignOut, completion: {
+        networkService.request(.SignOut, completion: { [unowned self]
             (success, responseDict, error) in
             
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -80,8 +80,15 @@ class GFMServices: NSObject {
             
             gfm_csrf = ""
             gfm_passport = ""
+            
+            self.userState.userId.value = ""
+            
             completed(isTrue: success)
         })
+    }
+    
+    func isSignedIn() -> Bool {
+        return userState.userId.value != "" ? true : false
     }
     
     // MARK: - Private methods

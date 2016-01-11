@@ -48,6 +48,8 @@ class GFMNavigationService: NSObject {
                 navigationController?.pushViewController(accountViewController, animated: animated)
                 
             }
+        default:
+            break
         }
     }
     
