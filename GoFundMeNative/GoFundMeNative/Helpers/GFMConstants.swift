@@ -14,10 +14,6 @@ enum PageType: String {
 }
 
 struct Constants {
-    struct PageTitles {
-        static let AccountPageTitle = "My Account"
-    }
-    
     struct Errors {
         static let ViewControllerFetchError = "There was a problem fetching the View Controller from Storyboard with identifier:"
         static let ViewModelCreationError = "There was an error creating the view model"

@@ -92,8 +92,6 @@
                         <outlet property="loadingActivityIndicatorView" destination="UmE-0I-MR6" id="2e2-ga-Q6f"/>
                         <outlet property="passwordTextField" destination="X6V-oG-CN7" id="HTo-2d-sTo"/>
                         <outlet property="signInButton" destination="sGk-F0-bHR" id="tnG-fh-8P2"/>
-                        <segue destination="ydX-wD-jq7" kind="show" id="ynd-iP-ydY"/>
-                        <segue destination="VBx-7p-Gk4" kind="show" id="tgT-dy-2rF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q6Y-b9-Rq4" firstAttribute="leading" secondItem="sqf-IB-XjO" secondAttribute="leading" id="T3t-bp-Exn"/>
-                            <constraint firstItem="q6Y-b9-Rq4" firstAttribute="top" secondItem="Uav-Mx-MfY" secondAttribute="bottom" id="V7S-v2-EjG"/>
+                            <constraint firstItem="q6Y-b9-Rq4" firstAttribute="top" secondItem="Uav-Mx-MfY" secondAttribute="bottom" constant="44" id="V7S-v2-EjG"/>
                             <constraint firstAttribute="trailing" secondItem="q6Y-b9-Rq4" secondAttribute="trailing" id="aAI-Tb-9a0"/>
                             <constraint firstItem="xAe-ba-Nmr" firstAttribute="top" secondItem="q6Y-b9-Rq4" secondAttribute="bottom" id="jYI-0c-cGd"/>
                         </constraints>

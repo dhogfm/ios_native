@@ -8,66 +8,6 @@
 
 import ReactiveCocoa
 
-enum SideMenuRow: Int {
-    case SETTING, SIGNOUT
-    
-    func menuTitle() -> String {
-        switch self {
-        case .SETTING:
-            return "Setting"
-        case .SIGNOUT:
-            return "Sign Out"
-        }
-    }
-    
-    func onRowTap(viewModel: GFMSideMenuViewModel) -> SignalProducer<Bool, NoError>{
-        let producer = SignalProducer<Bool, NoError> { [unowned viewModel] (observer, disposable) in
-            switch self {
-            case .SETTING:
-                observer.sendCompleted()
-            case .SIGNOUT:
-                viewModel.services.signOut(){ (isSignedOut) in
-                    observer.sendNext(isSignedOut)
-                    observer.sendCompleted()
-                }
-            }
-        }
-        return producer
-    }
-    
-    func handleSignalEvent(event: Event<Bool, NoError>, viewModel: GFMSideMenuViewModel) {
-        switch self {
-        case .SETTING:
-            break
-        case .SIGNOUT:
-            switch event {
-            case .Next:
-                if let isLoggedOut = event.value as Bool? {
-                    if (isLoggedOut) {
-                        let signInModel = GFMSignInModel()
-                        let signInViewModel = GFMSignInViewModel(model: signInModel, services: viewModel.services)
-                        
-                        viewModel.services.popToSignIn(signInViewModel)
-                    }
-                }
-            case .Completed:
-                NSLog("finished")
-            case .Interrupted:
-                NSLog("Interrupted")
-            case .Failed:
-                NSLog("Failed")
-                break
-            }
-        }
-    }
-    
-    static let count: Int = {
-        var max: Int = 0
-        while let _ = SideMenuRow(rawValue: max) { max += 1 }
-        return max
-    }()
-}
-
 class GFMSideMenuViewModel: GFMViewModel {
 
     // Inputs
@@ -92,17 +32,66 @@ class GFMSideMenuViewModel: GFMViewModel {
     
     // MARK: - View Actions
     
+    func setupModelActions() {
+    }
+    
     func handleSelectRowAtIndexPath(indexPath: NSIndexPath) {
         if let menuRow = SideMenuRow(rawValue: indexPath.row) {
-            menuRow.onRowTap(self)
+            self.onRowTap(menuRow)
                 .observeOn(UIScheduler())
                 .start({ [unowned self] event in
-                    menuRow.handleSignalEvent(event, viewModel: self)
+                    self.handleSignalEvent(event, row: menuRow)
                 })
         }
     }
     
-    func setupModelActions() {
+    func onRowTap(rowTapped: SideMenuRow) -> SignalProducer<Bool, NoError> {
+        let producer = SignalProducer<Bool, NoError> { [unowned self] (observer, disposable) in
+            switch rowTapped {
+            case .ACCOUNT:
+                observer.sendCompleted()
+            case .FEED:
+                observer.sendCompleted()
+            case .SETTINGS:
+                observer.sendCompleted()
+            case .SIGNOUT:
+                self.services.signOut(){ (isSignedOut) in
+                    observer.sendNext(isSignedOut)
+                    observer.sendCompleted()
+                }
+            }
+        }
+        return producer
+    }
+    
+    func handleSignalEvent(event: Event<Bool, NoError>, row: SideMenuRow) {
+        switch row {
+        case .ACCOUNT:
+            break
+        case .FEED:
+            break
+        case .SETTINGS:
+            break
+        case .SIGNOUT:
+            switch event {
+            case .Next:
+                if let isLoggedOut = event.value as Bool? {
+                    if (isLoggedOut) {
+                        let signInModel = GFMSignInModel()
+                        let signInViewModel = GFMSignInViewModel(model: signInModel, services: self.services)
+                        
+                        self.services.popToSignIn(signInViewModel)
+                    }
+                }
+            case .Completed:
+                NSLog("finished")
+            case .Interrupted:
+                NSLog("Interrupted")
+            case .Failed:
+                NSLog("Failed")
+                break
+            }
+        }
     }
     
     // MARK: - Data Source

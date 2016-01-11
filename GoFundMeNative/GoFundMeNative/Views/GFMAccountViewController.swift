@@ -19,7 +19,7 @@ class GFMAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = Constants.PageTitles.AccountPageTitle
+        title = "My Account"
         
         setupViewModelBindings()
         self.setupLeftMenuButton()

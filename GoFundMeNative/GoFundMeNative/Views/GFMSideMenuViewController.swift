@@ -41,6 +41,7 @@ class GFMSideMenuViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        UIApplication.sharedApplication().statusBarHidden = false
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         viewModel!.handleSelectRowAtIndexPath(indexPath)
     }
