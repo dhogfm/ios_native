@@ -19,7 +19,7 @@ class UserState: NSObject {
 
 class GFMServices: NSObject {
     
-    private let persistenceService = GFMPersistenceService()
+    private let persistenceService = GFMRepository()
     private let networkService = GFMNetworkService()
     var navigationService: GFMNavigationService?
     let userState = UserState()

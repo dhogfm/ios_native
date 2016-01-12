@@ -46,7 +46,6 @@ extension GoFundMe: TargetType {
             return NSURL(string: "https://www.gofundme.com/mvc.php")!
         case .SignOut:
             return NSURL(string: "https://funds.gofundme.com/")!
-        
         }
     }
     

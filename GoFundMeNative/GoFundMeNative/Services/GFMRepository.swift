@@ -19,7 +19,7 @@ class UserObject: Object {
     }
 }
 
-class GFMPersistenceService: NSObject {
+class GFMRepository: NSObject {
     // accessing each realm needs to happen on the same thread
     var realmConfiguration = Realm.Configuration()
     

@@ -11,7 +11,7 @@ import RealmSwift
 
 class GFMPersistenceServiceTestCase: XCTestCase {
     
-    var persistenceService: GFMPersistenceService!
+    var persistenceService: GFMRepository!
     var tokens: GFMSignInTokens!
     
     let userId = "1"
@@ -22,7 +22,7 @@ class GFMPersistenceServiceTestCase: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
-        persistenceService = GFMPersistenceService(configuration: Realm.Configuration(inMemoryIdentifier: "TestRealmConfiguration"))
+        persistenceService = GFMRepository(configuration: Realm.Configuration(inMemoryIdentifier: "TestRealmConfiguration"))
         tokens = GFMSignInTokens(responseDict: ["user_id" : userId,
                                                 "csrf" : csrf,
                                                 "passport" : passport])
